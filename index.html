@@ -210,31 +210,28 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Given a person and a garment image, virtual try-on (VTO) aims to synthesize a realistic image 
+            of the person wearing the garment, while preserving their original pose and identity. Although 
+            recent VTO methods excel at visualizing garment appearance, they largely overlook a crucial 
+            aspect of the try-on experience: the accuracy of garment fit -- for example, depicting how 
+            an extra-large shirt looks on an extra-small person.  A key obstacle is the absence of datasets 
+            that provide precise garment and body size information, particularly for ``ill-fit” cases, where 
+            garments are significantly too large or too small. Consequently, current VTO methods default to 
+            generating well-fitted results regardless of the garment or person size. 
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            In this paper, we take the first steps towards solving this open problem. We introduce FIT 
+            (<b>F</b>it-<b>I</b>nclusive <b>T</b>ry-on), a large-scale VTO dataset comprising over 
+            \textbf{1.13M} try-on image triplets accompanied by precise body and garment measurements. 
+            We overcome the challenges of data collection via a scalable synthetic strategy: 
+            (1) We programmatically generate 3D garments using GarmentCode~\cite{GarmentCode} and drape 
+            them via physics simulation to capture realistic garment fit. (2) We employ a novel re-texturing 
+            framework to transform synthetic renderings into photorealistic images while strictly preserving geometry. 
+            (3) We introduce person identity preservation into our re-texturing model to generate paired person images 
+            (same person, different garments) for supervised training. Finally, we leverage our FIT dataset 
+            to train a baseline fit-aware virtual try-on model. Our data and results set the new state-of-the-art 
+            for fit-aware virtual try-on, as well as offer a robust benchmark for future research. We will 
+            make all data and code publicly available. 
           </p>
         </div>
       </div>
