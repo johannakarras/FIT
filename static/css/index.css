@@ -1,3 +1,15 @@
+
+/* Custom FIT CSS */
+.teaser-image {
+  display: block;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 1100px;
+  height: auto;
+}
+
+/* End custom FIT CSS */
+
 body {
   font-family: 'Noto Sans', sans-serif;
 }
