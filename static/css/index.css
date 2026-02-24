@@ -102,8 +102,66 @@ img.thumb.person-thumb {
   border-radius: 10px;
 }
 
-/* VTO Demo */
+/* End VTO Demo */
 
+
+/* Resizing Demo */
+/* Style the tick labels to span the width of the slider */
+#size-settings {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 5px; /* Adjust this to match your slider's thumb offset */
+}
+
+#size-settings option {
+  padding: 0;
+  font-size: 0.75rem;
+  color: #4a4a4a;
+  font-weight: 600;
+  /* Ensure the text centers under the tick mark */
+  display: flex;
+  justify-content: center;
+  width: 1px; 
+  white-space: nowrap;
+}
+
+/* Optional: Customize the slider color to match Nerfies */
+input[type=range] {
+  accent-color: #00d1b2;
+}
+
+.size-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.size-labels-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 5px;
+  margin-top: 8px;
+}
+
+.size-labels-container span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  transition: opacity 0.3s ease;
+  width: 30px;
+  text-align: center;
+}
+
+/* This will now definitely work because spans are standard elements */
+.is-unavailable {
+  opacity: 1.00 !important;
+  color: #ccc !important;
+}
+
+/* End Resizing Demo*/
 
 body {
   font-family: 'Noto Sans', sans-serif;

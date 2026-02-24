@@ -1,5 +1,5 @@
 window.HELP_IMPROVE_VIDEOJS = false;
-
+// ------------ VTO Demo ------------ 
 let currentGarment = 'xl';
 let currentPerson = 'xs';
 
@@ -18,6 +18,96 @@ function selectPerson(id) {
   currentPerson = id;
   updateDisplay();
 }
+// ------------ End VTO Demo ------------ 
+
+// ------------ Resizing Demo ------------ 
+// 1. Configuration & State
+const sizeMap = { 1: "xs", 2: "s", 3: "m", 4: "l", 5: "xl", 6: "2xl", 7: "3xl" };
+const availability = {
+  'xs': [1, 2, 3, 4], // XS, S, M, L
+  'xl':  [3, 4, 5, 6], // M, L, XL, 2XL
+};
+
+let currentGarment2 = 'xs';
+let currentSize = "s"; // Start with a string that matches sizeMap[2]
+
+// 2. The Main Initialization
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('size-slider');
+  
+  if (slider) {
+    slider.addEventListener('input', function(e) {
+      let val = parseInt(e.target.value);
+      const validSizes = availability[currentGarment2] || [1,2,3,4,5,6,7];
+
+      // SNAP LOGIC: If the user slides to a restricted value, find the closest valid one
+      if (!validSizes.includes(val)) {
+        val = validSizes.reduce((prev, curr) => 
+          Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+        );
+        e.target.value = val; // Force the slider handle to the valid position
+      }
+      
+      currentSize = sizeMap[val];
+      updateSliderDemo();
+    });
+  }
+  // This initializes the labels and snap logic for the default garment
+  selectGarmentSlider(currentGarment2, null);
+});
+
+// 3. Update Function
+function updateSliderDemo() {
+  const img = document.getElementById('slider-result-image');
+  if (img) {
+    img.src = `static/images/resizing/${currentGarment2}_${currentSize}.png`;
+  }
+}
+
+// 4. Garment Selection Handler
+function selectGarmentSlider(id, element) {
+  currentGarment2 = id;
+  const validSizes = availability[id] || [1,2,3,4,5,6,7];
+
+  // 1. Update text labels styling
+  const spans = document.querySelectorAll('#size-settings span');
+  spans.forEach(span => {
+    const val = parseInt(span.getAttribute('data-value'));
+    if (validSizes.includes(val)) {
+      span.classList.remove('is-unavailable');
+    } else {
+      span.classList.add('is-unavailable');
+    }
+  });
+
+  // 2. Snap logic
+  const slider = document.getElementById('size-slider');
+  let val = parseInt(slider.value);
+  
+  if (!validSizes.includes(val)) {
+    // Find the closest valid number
+    val = validSizes.reduce((prev, curr) => 
+      Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+    );
+    slider.value = val;
+  }
+  
+  // *** KEY ADDITION ***
+  // Update the global size string based on the (potentially snapped) slider value
+  currentSize = sizeMap[val];
+
+  // 3. Highlight the selected garment thumbnail
+  document.querySelectorAll('.garment-thumb').forEach(el => el.classList.remove('is-active'));
+  if (element) {
+    const thumbImg = element.querySelector('img');
+    if (thumbImg) thumbImg.classList.add('is-active');
+  }
+
+  // Now update the result image with the new garment AND the correct size
+  updateSliderDemo();
+}
+
+// ------------ End Resizing Demo ------------ 
 
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;

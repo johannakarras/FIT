@@ -188,6 +188,7 @@
     <div class="columns is-centered">
       <div class="column is-full-width has-text-centered">
         <h2 class="title is-3">Fit-Aware Virtual Try-On Demo</h2>
+        <p style="margin-bottom:3%;">Visualize how different garments fit across different body shapes.</p>
         <div class="container" style="max-width: 800px;">
             
             <div class="columns is-mobile is-variable is-8 is-centered">
@@ -266,7 +267,57 @@
       </div>
     </div>
     <!--/ VTO Demo. -->
-</section>
+    
+    <!-- Resizing Demo -->
+    <div class="columns is-centered" style="margin-top:5%;">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Garment Resizing Demo</h2>
+        <p style="margin-bottom:3%;">Try on different sizes of the same garment. </p>
+          <div class="container" style="max-width: 700px;">
+            <div class="columns is-mobile is-variable is-3 is-centered">
+              <!-- Selection of Images -->
+              <div class="column is-narrow">
+                <div class="vertical-scroll-box">
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('xs', this)">
+                    <img src="static/images/resizing/xs_xs.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">XS Person</figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('xl', this)">
+                    <img src="static/images/resizing/xl_xl.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">XL Person</figcaption>
+                  </figure>
+                  </div>
+              </div>
+
+              <!-- Result Image -->
+              <div class="column is-narrow">
+                <div class="main-display has-text-centered">
+                  <img id="slider-result-image" src="static/images/resizing/xs_xs.png" style="max-height: 500px;">
+                </div>
+                
+                <!-- Slider for Garment Size -->
+                <div class="mt-5 has-text-centered" style="width: 100%; max-width: 400px; margin: 0 auto;">
+                  <p class="label mb-4">Garment Size</p>
+                  
+                  <input id="size-slider" type="range" min="1" max="7" value="4" step="1" style="width: 100%;">
+
+                  <div id="size-settings" class="size-labels-container">
+                    <span data-value="1">XS</span>
+                    <span data-value="2">S</span>
+                    <span data-value="3">M</span>
+                    <span data-value="4">L</span>
+                    <span data-value="5">XL</span>
+                    <span data-value="6">2XL</span>
+                    <span data-value="7">3XL</span>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--/ Resizing Demo -->
 
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
