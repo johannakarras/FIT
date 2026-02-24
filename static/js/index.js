@@ -109,6 +109,76 @@ function selectGarmentSlider(id, element) {
 
 // ------------ End Resizing Demo ------------ 
 
+
+// ------------ Browse Dataset ------------ 
+const sampleData = {
+  1: { height: "173", bust: "85", waist: "62", hips: "90", length: "70", width: "50", sleeve: "60" },
+  2: { height: "165", bust: "80", waist: "60", hips: "85", length: "68", width: "48", sleeve: "58" },
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gridContainer = document.getElementById('dataset-grid');
+  
+  // Update these to match your actual folder and file count
+  const totalImages = 16; 
+  const path = 'static/images/dataset/';
+
+  if (gridContainer) {
+    for (let i = 1; i <= totalImages; i++) {
+      const item = document.createElement('div');
+      item.className = 'grid-item';
+      
+      // We use an anonymous function to call toggleExpand
+      item.onclick = function() { toggleExpand(this); };
+
+      // Read measurements
+      const data = sampleData[i] || sampleData[1]; // Fallback to first if missing
+
+      // Add person and triplet images to visualization
+      item.innerHTML = `
+        <img src="${path}img${i}.png" class="main-sample">
+
+        <div class="extra-assets">
+          <img src="${path}garment${i}.png" class="asset-img garment-asset" title="Garment" onerror="this.style.display='none'">
+          <img src="${path}triplet${i}.png" class="asset-img triplet-asset" title="Triplet" onerror="this.style.display='none'">
+        </div>
+
+        <div class="measurements-list">
+          <div class="measure-item"><strong>Height:</strong> ${data.height} cm</div>
+          <div class="measure-item"><strong>Bust:</strong> ${data.bust} cm</div>
+          <div class="measure-item"><strong>Waist:</strong> ${data.waist} cm</div>
+          <div class="measure-item"><strong>Hips:</strong> ${data.hips} cm</div>
+          <div class="measure-item"><strong>Length:</strong> ${data.length} cm</div>
+          <div class="measure-item"><strong>Width:</strong> ${data.width} cm</div>
+          <div class="measure-item"><strong>Sleeve:</strong> ${data.sleeve} cm</div>
+        </div>
+
+        <div class="item-overlay">
+          <span class="is-size-7">Sample #${i}</span>
+        </div>
+      `;
+            
+      gridContainer.appendChild(item);
+    }
+  }
+});
+
+// Keep this outside the listener so it's globally available for the onclicks
+function toggleExpand(element) {
+  const isCurrentlyExpanded = element.classList.contains('is-expanded');
+
+  // Collapse everyone else
+  document.querySelectorAll('.grid-item').forEach(item => {
+    item.classList.remove('is-expanded');
+  });
+
+  // Toggle the clicked one
+  if (!isCurrentlyExpanded) {
+    element.classList.add('is-expanded');
+  }
+}
+// ------------ Browse Dataset ------------ 
+
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;
 
