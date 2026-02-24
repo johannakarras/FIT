@@ -1,5 +1,24 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
+let currentGarment = 'xl';
+let currentPerson = 'xs';
+
+function updateDisplay() {
+  const display = document.getElementById('result-image');
+  // Logic: result_g1_p1.jpg, result_g2_p1.jpg, etc.
+  display.src = `./static/images/vto/${currentGarment}_${currentPerson}.png`; //`./results/result_${currentGarment}_${currentPerson}.jpg`;
+}
+
+function selectGarment(id) {
+  currentGarment = id;
+  updateDisplay();
+}
+
+function selectPerson(id) {
+  currentPerson = id;
+  updateDisplay();
+}
+
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;
 

@@ -47,7 +47,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On</h1>
+          <h1 class="title is-1 publication-title">FIT: A Large-Scale Dataset for Fit-Aware <br> Virtual Try-On</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://johannakarras.github.io/">Johanna Karras</a><sup>1,2*</sup>,</span>
@@ -75,7 +75,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="static/pdf/paper.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -84,22 +84,22 @@
                 </a>
               </span>
               <span class="link-block">
+                <a href="static/pdf/supplementary.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+              <!-- Arxiv Link. -->
+              <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -136,73 +136,14 @@
       <img class="teaser-image" src="static/images/teaser.svg">
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">FIT Dataset</span>: A dataset and benchmark designed for <i>fit-aware</i> virtual try-on, featuring diverse garment fits (e.g. tight, loose) and precise size annotations. 
-        <i>Left</i> Sample dataset triplets showing the conditioning garent image (top), the conditioning person image (middle), and the target try-on image (bottom). 
-        <i>Right</i> Visualization of the corresponding perosn and garent measurement annotations. Backgrounds removed for clarity.
+        <i>Left:</i> Sample dataset triplets showing the conditioning garent image (<i>top</i>), the conditioning person image (<i>middle</i>), and the target try-on image (<i>bottom</i>). 
+        <i>Right:</i> Visualization of the corresponding perosn and garent measurement annotations. Backgrounds removed for clarity.
       </h2>
     </div>
   </div>
 </section>
 
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
+<section class="section" style="padding-top:0rem; padding-bottom:0rem;">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -215,16 +156,16 @@
             recent VTO methods excel at visualizing garment appearance, they largely overlook a crucial 
             aspect of the try-on experience: the accuracy of garment fit -- for example, depicting how 
             an extra-large shirt looks on an extra-small person.  A key obstacle is the absence of datasets 
-            that provide precise garment and body size information, particularly for ``ill-fit” cases, where 
+            that provide precise garment and body size information, particularly for "ill-fit” cases, where 
             garments are significantly too large or too small. Consequently, current VTO methods default to 
             generating well-fitted results regardless of the garment or person size. 
           </p>
           <p>
             In this paper, we take the first steps towards solving this open problem. We introduce FIT 
             (<b>F</b>it-<b>I</b>nclusive <b>T</b>ry-on), a large-scale VTO dataset comprising over 
-            \textbf{1.13M} try-on image triplets accompanied by precise body and garment measurements. 
+            <b>1.13M try-on image triplets</b> accompanied by <b>precise body and garment measurements</b>. 
             We overcome the challenges of data collection via a scalable synthetic strategy: 
-            (1) We programmatically generate 3D garments using GarmentCode~\cite{GarmentCode} and drape 
+            (1) We programmatically generate 3D garments using GarmentCode and drape 
             them via physics simulation to capture realistic garment fit. (2) We employ a novel re-texturing 
             framework to transform synthetic renderings into photorealistic images while strictly preserving geometry. 
             (3) We introduce person identity preservation into our re-texturing model to generate paired person images 
@@ -237,127 +178,95 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-
+    <!-- VTO Demo -->
     <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Fit-Aware Virtual Try-On Demo</h2>
+        <div class="container" style="max-width: 800px;">
+            
+            <div class="columns is-mobile is-variable is-8 is-centered">
+              <div class="column is-narrow"> <p class="label has-text-centered">Select Garment</p>
+                <div class="vertical-scroll-box">
+                  <figure class="image-container mb-4" onclick="selectGarment('xl', this)">
+                    <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 has-text-weight-semibold mt-1 has-text-centered">
+                      Size XS
+                    </figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarment('xl', this)">
+                    <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 has-text-weight-semibold mt-1 has-text-centered">
+                      Size S
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+              <div class="column is-narrow">
+                <div class="main-display has-text-centered">
+                  <img id="result-image" src="static/images/vto/xl_xs.png" style="max-height: 500px;">
+                </div>
+                <p class="label has-text-centered">Select Person</p>
+              </div> 
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
+            <div class="columns is-mobile is-variable is-1 mt-4 person-row">
+                <div class="column is-2">
+                  <figure class="image-container" onclick="selectPerson('xs', this)">
+                    <img src="static/images/vto/p_xs.png" class="thumb person-thumb">
+                    <figcaption class="is-size-7 mt-1 has-text-centered">Size XS</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-2">
+                  <figure class="image-container" onclick="selectPerson('s', this)">
+                    <img src="static/images/vto/p_s.png" class="thumb person-thumb">
+                    <figcaption class="is-size-7 mt-1 has-text-centered">Size S</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-2">
+                  <figure class="image-container" onclick="selectPerson('m', this)">
+                    <img src="static/images/vto/p_m.png" class="thumb person-thumb">
+                    <figcaption class="is-size-7 mt-1 has-text-centered">Size M</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-2">
+                  <figure class="image-container" onclick="selectPerson('l', this)">
+                    <img src="static/images/vto/p_l.png" class="thumb person-thumb">
+                    <figcaption class="is-size-7 mt-1 has-text-centered">Size L</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-2">
+                  <figure class="image-container" onclick="selectPerson('xl', this)">
+                    <img src="static/images/vto/p_xl.png" class="thumb person-thumb">
+                    <figcaption class="is-size-7 mt-1 has-text-centered">Size XL</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-2">
+                  <figure class="image-container" onclick="selectPerson('2xl', this)">
+                    <img src="static/images/vto/p_2xl.png" class="thumb person-thumb">
+                    <figcaption class="is-size-7 mt-1 has-text-centered">Size 2XL</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-2">
+                  <figure class="image-container" onclick="selectPerson('3xl', this)">
+                    <img src="static/images/vto/p_3xl.png" class="thumb person-thumb">
+                    <figcaption class="is-size-7 mt-1 has-text-centered">Size 3XL</figcaption>
+                  </figure>
+                </div>
+                </div>
+            </div>
+          </div>
         </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
-
+    <!--/ VTO Demo. -->
+</section>
 
     <!-- Concurrent Work. -->
     <div class="columns is-centered">

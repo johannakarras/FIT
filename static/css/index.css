@@ -1,5 +1,5 @@
 
-/* Custom FIT CSS */
+/* FIT Teaser */
 .teaser-image {
   display: block;
   margin: 0 auto;
@@ -7,8 +7,103 @@
   max-width: 1100px;
   height: auto;
 }
+/* End FIT Teaser */
 
-/* End custom FIT CSS */
+/* VTO Demo */
+.thumb {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+  border-radius: 8px;
+}
+
+.garment-thumb {
+  width: 100px;  /* Adjust this number to make them smaller or larger */
+  height: 100px; /* Keep it square or let it be auto */
+  object-fit: cover; /* Prevents stretching if the image isn't square */
+  border-radius: 8px;
+}
+
+.thumb:hover {
+  border-color: #00d1b2; /* Bulma primary color */
+}
+
+/* Ensure the vertical container doesn't expand past the images */
+.vertical-scroll-box {
+  display: flex;
+  flex-direction: column; /* Stack thumbnails vertically */
+  align-items: center;    /* Center them horizontally */
+  width: 100%;            /* Ensure it takes up the full width of the column */
+  gap: 15px;              /* Consistent spacing between items */
+}
+
+/* Ensure the figure and image also center their own content */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Create a standard thumbnail size */
+.thumb-container {
+  width: 100px; /* Adjust this to your preferred size */
+  height: 100px; /* Must match width for a square, or use 130px for a portrait look */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5; /* Light grey background for padding/empty space */
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Ensure the image fills the box without stretching */
+.thumb-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the "magic" property that crops instead of stretching */
+}
+
+/* Active state for both types */
+.thumb-container.is-active {
+  border-color: #00d1b2;
+  box-shadow: 0 0 10px rgba(0, 209, 178, 0.2);
+}
+
+.person-row {
+  display: flex !important;
+  flex-wrap: nowrap !important; /* Forces one line */
+  overflow-x: auto !important; /* Enables horizontal scroll */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+/* Ensure thumbnails don't shrink to fit */
+.person-row .column.is-2 {
+  flex-shrink: 0; 
+  padding: 0 0px; /* Tightens the horizontal gap between people */
+  width: 80px;
+}
+
+img.thumb.person-thumb {
+  width:150px;
+  height: 180px;
+}
+
+/* Optional: Make the scrollbar pretty */
+.person-row::-webkit-scrollbar {
+  height: 6px;
+}
+.person-row::-webkit-scrollbar-thumb {
+  background-color: #00d1b2;
+  border-radius: 10px;
+}
+
+/* VTO Demo */
+
 
 body {
   font-family: 'Noto Sans', sans-serif;
