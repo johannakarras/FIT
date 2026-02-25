@@ -11,6 +11,16 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -122,7 +132,6 @@
                   <span>Data</span>
                   </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -137,7 +146,7 @@
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">FIT Dataset</span>: A dataset and benchmark designed for <i>fit-aware</i> virtual try-on, featuring diverse garment fits (e.g. tight, loose) and precise size annotations. 
         <i>Left:</i> Sample dataset triplets showing the conditioning garent image (<i>top</i>), the conditioning person image (<i>middle</i>), and the target try-on image (<i>bottom</i>). 
-        <i>Right:</i> Visualization of the corresponding perosn and garent measurement annotations. Backgrounds removed for clarity.
+        <i>Right:</i> Visualization of the corresponding person and garent measurement annotations. Backgrounds removed for clarity.
       </h2>
     </div>
   </div>
@@ -186,11 +195,100 @@
   <div class="container is-fluid">
     <!-- Browse Dataset -->
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Browse the FIT Dataset</h2>
+      <h2 class="title is-3 has-text-centered">FIT Dataset</h2>
+      <h2 class="title is-5 has-text-centered">Browse the FIT Dataset</h2>
       <p class="has-text-centered" style="margin-bottom:3%;">Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements.</p>
-      <div id="dataset-grid" class="dataset-grid"></div>
+      <div id="dataset-grid" class="dataset-grid" style="background-color:#eee"></div>
     </div>
     <!--/ Browse Dataset-->
+    <!-- Dataset Statistic -->
+    <div class="container mt-5">
+      <h2 class="title is-5 has-text-centered">FIT Datset Comparison</h2>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered">
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>Realism</th>
+              <th>Ill-Fit</th>
+              <th>Size Info</th>
+              <th>Triplet</th>
+              <th>Scale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SV-VTO</td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td>1,524</td>
+            </tr>
+            <tr>
+              <td>SIZER</td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td>2,000</td>
+            </tr>
+            <tr>
+              <td>DeepFashion3D</td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td>2,078</td>
+            </tr>
+            <tr>
+              <td>ViTON-HD</td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td>11,647</td>
+            </tr>
+            <tr>
+              <td>LAION-Garment</td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td>60K</td>
+            </tr>
+            <tr>
+              <td>SewFactory</td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td>1M</td>
+            </tr>
+            <tr>
+              <td>GCD</td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-danger">✗</span></td>
+              <td>115K</td>
+            </tr>
+            <tr class="has-text-weight-bold" style="background-color: #f0fdfa;">
+              <td>Ours</td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td><span class="has-text-success">✓</span></td>
+              <td>1.13M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="is-size-5 has-text-centered">
+        We compare FIT to related datasets. FIT is the first large-scale dataset for virtual try-on that provides photorealistic images, ill-fit examples, precise measurement information, and ground-truth paired-person images. For scale, we report the number of training images.
+      </p>
+    </div>
+    <!--/ Dataset Statistics -->
   </div>
 </section>
 
@@ -311,46 +409,55 @@
         </div>
       </div>
     <!--/ Resizing Demo -->
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
+<!-- Methods. -->
+<section class="section" style="padding-bottom:0rem;background-color: #eee;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <h2 class="title is-3" style="background:none; padding:0px;">Method</h2>
+      </div>
+    </div>
+    <div class="columns has-text-centered">
+      <div class="content has-text-justified">
+        <h2 class="title is-5" style="background:none; padding:0px;">FIT Dataset Generation Pipeline</h2>
+        <img class="teaser-image" src="static/images/data_pipeline.svg">
+        <p style="margin-top:3%; margin-bottom:3%;">
+          <b>(a)</b> Overall workflow: We start by simulating a 3D garment on a target body via GarmentCode to render a synthetic image $I_s$. We generate a text prompt $p$ (via VLM) and a composite normal map $I_n$ (stitching estimated normals with realistic head/feet details). These condition our re-texturing model $f_\text{texture}$ to produce the try-on image $I_{\text{try-on}}$. Finally, we use $f_\text{paired}$ to generate a paired person image $I_p$, and a VLM to synthesize a layflat garment $I_g$.
+          <b>(b)</b> GarmentCode simulation: Given a sampled design template, we compute sewing patterns for a specific body size. Then, we cross-drape these patterns onto a different target body, using box-mesh realignment to prevent simulation failures, and extract ground-truth measurements. (c) Using source and target garments draped on the same body, we derive an identity map $I_\text{id}$ by masking the garment in $I_{\text{try-on}}$. Conditioned on $I_\text{id}$, a paired normal map $I_n'$, and a paired prompt $p'$, $f_\text{paired}$ generates the paired person image $I_p$.
+        </p>
+      </div>
+    </div>
+    <div class="columns has-text-centered">
+      <div class="content has-text-justified">
+        <h2 class="title is-5" style="background:none; padding:0px;">FIT-Aware Virtual Try-On</h2>
+        <img class="teaser-image" src="static/images/architecture.svg">
+        <p style="margin-top:3%; margin-bottom:3%;">
+          Our architecture is a flow-based model based on Flux.1-dev MMDiT architecture and finetuned with LoRA. 
+          FiT-VTO generates a try-on image $I_{\text{try-on}}$ given a layflat garment image $I_g$, paired person 
+          image $I_p$, and person-garment measurements  $m = [m_p, m_g]$. First, image inputs $I_g$ and $I_p$ 
+          are encoded into latents separately through a pre-trained VAE encoder. We replace the text embeddings 
+          in Flux.1-dev with custom measurement embeddings $m_{\text{embed}}$ computed from $m$. Person latents 
+          are channel-concatenated with the noisy target latents, while layflat latents and  $m_{\text{embed}}$ 
+          are sequence-wise concatenated with $z_t$. After processing through the diffusion transformer, clean 
+          latents are decoded by the VAE decoder.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Methods -->
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{fitvto2026,
+  author    = {Karras, Johanna and Wang, Yuanhao and Li, Yingwei and Kemelmacher-Shlizerman, Ira},
+  title     = {FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On},
+  journal   = {arxiv},
+  year      = {2026},
 }</code></pre>
   </div>
 </section>

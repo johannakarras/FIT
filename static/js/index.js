@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.getElementById('dataset-grid');
   
   // Update these to match your actual folder and file count
-  const totalImages = 16; 
+  const totalImages = 32; 
   const path = 'static/images/dataset/';
 
   if (gridContainer) {
