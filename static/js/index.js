@@ -115,7 +115,6 @@ const sampleData = {
   1: { height: "173", bust: "85", waist: "62", hips: "90", length: "70", width: "50", sleeve: "60" },
   2: { height: "165", bust: "80", waist: "60", hips: "85", length: "68", width: "48", sleeve: "58" },
 };
-
 document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.getElementById('dataset-grid');
   
@@ -165,17 +164,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Keep this outside the listener so it's globally available for the onclicks
 function toggleExpand(element) {
-  const isCurrentlyExpanded = element.classList.contains('is-expanded');
+    const isExpanded = element.classList.contains('is-expanded');
+    const container = document.querySelector('.dataset-grid');
+    
+    // 1. Remove expanded state from all others
+    document.querySelectorAll('.grid-item').forEach(item => {
+        item.classList.remove('is-expanded', 'expand-left');
+    });
 
-  // Collapse everyone else
-  document.querySelectorAll('.grid-item').forEach(item => {
-    item.classList.remove('is-expanded');
-  });
+    if (!isExpanded) {
+        // 2. Determine if we are on the right side of the viewport
+        const rect = element.getBoundingClientRect();
+        const viewportCenterX = window.innerWidth / 2;
 
-  // Toggle the clicked one
-  if (!isCurrentlyExpanded) {
-    element.classList.add('is-expanded');
-  }
+        if (rect.left > viewportCenterX) {
+            element.classList.add('expand-left');
+        }
+
+        element.classList.add('is-expanded');
+        
+        // 3. Smoothly scroll the expanded item into view if it's still cut off
+        setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }, 350); // Match your CSS transition time
+    }
 }
 // ------------ Browse Dataset ------------ 
 
