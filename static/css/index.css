@@ -1,3 +1,9 @@
+/* Template Style Customizations */
+.title.is-3{
+  background: #dbdbdb;
+  padding: 3%;
+}
+/* End Template Style Customizations */
 
 /* FIT Teaser */
 .teaser-image {
@@ -10,98 +16,66 @@
 /* End FIT Teaser */
 
 /* VTO Demo */
-.thumb {
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border 0.2s;
-  border-radius: 8px;
+/* 1. Force Horizontal Layout */
+.columns.is-mobile {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; /* Prevents stacking */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.garment-thumb {
-  width: 100px;  /* Adjust this number to make them smaller or larger */
-  height: 100px; /* Keep it square or let it be auto */
-  object-fit: cover; /* Prevents stretching if the image isn't square */
-  border-radius: 8px;
+/* 2. Grid Definitions */
+.garment-grid, .person-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 75px); /* Consistent width */
+  gap: 8px;
+  justify-content: center;
+}
+
+/* 3. Thumbnail Styling (Consolidated) */
+.thumb {
+  width: 75px; 
+  height: 75px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  display: block;
 }
 
 .thumb:hover {
-  border-color: #00d1b2; /* Bulma primary color */
+  border-color: #eee;
 }
 
-/* Ensure the vertical container doesn't expand past the images */
-.vertical-scroll-box {
-  display: flex;
-  flex-direction: column; /* Stack thumbnails vertically */
-  align-items: center;    /* Center them horizontally */
-  width: 100%;            /* Ensure it takes up the full width of the column */
-  gap: 15px;              /* Consistent spacing between items */
-}
-
-/* Ensure the figure and image also center their own content */
-.image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-/* Create a standard thumbnail size */
-.thumb-container {
-  width: 100px; /* Adjust this to your preferred size */
-  height: 100px; /* Must match width for a square, or use 130px for a portrait look */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f5f5; /* Light grey background for padding/empty space */
-  border-radius: 8px;
-  border: 2px solid transparent;
-  transition: all 0.2s ease;
-}
-
-/* Ensure the image fills the box without stretching */
-.thumb-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* This is the "magic" property that crops instead of stretching */
-}
-
-/* Active state for both types */
-.thumb-container.is-active {
+.thumb.is-active {
   border-color: #00d1b2;
-  box-shadow: 0 0 10px rgba(0, 209, 178, 0.2);
+  box-shadow: 0 0 8px rgba(0, 209, 178, 0.3);
 }
 
-.person-row {
-  display: flex !important;
-  flex-wrap: nowrap !important; /* Forces one line */
-  overflow-x: auto !important; /* Enables horizontal scroll */
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px;
+/* 4. Column Sizing */
+.column.is-narrow {
+  flex: 0 0 auto; /* Prevents side columns from shrinking */
 }
 
-/* Ensure thumbnails don't shrink to fit */
-.person-row .column.is-2 {
-  flex-shrink: 0; 
-  padding: 0 0px; /* Tightens the horizontal gap between people */
-  width: 80px;
+.main-display-column {
+  flex: 0 1 auto;
+  min-width: 300px; /* Ensures center image stays visible */
+  max-width: 500px;
 }
 
-img.thumb.person-thumb {
-  width:150px;
-  height: 180px;
+/* 5. Odd Number Centering */
+.garment-grid .image-container:last-child:nth-child(odd),
+.person-grid .image-container:last-child:nth-child(odd) {
+  grid-column: span 2;
+  justify-self: center;
 }
 
-/* Optional: Make the scrollbar pretty */
-.person-row::-webkit-scrollbar {
-  height: 6px;
+.image-container {
+  margin: 0 !important;
 }
-.person-row::-webkit-scrollbar-thumb {
-  background-color: #00d1b2;
-  border-radius: 10px;
-}
-
 /* End VTO Demo */
 
 

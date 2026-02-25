@@ -148,7 +148,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" style="background:none; padding:0px;">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Given a person and a garment image, virtual try-on (VTO) aims to synthesize a realistic image 
@@ -197,85 +197,66 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- VTO Demo -->
-    <div class="columns is-centered">
-      <div class="column is-full-width has-text-centered">
+    <div class="container" style="max-width: 1500px;"> 
+      <div class="has-text-centered mt-6 mb-5">
         <h2 class="title is-3">Fit-Aware Virtual Try-On Demo</h2>
         <p style="margin-bottom:3%;">Visualize how different garments fit across different body shapes.</p>
-        <div class="container" style="max-width: 800px;">
-            
-            <div class="columns is-mobile is-variable is-8 is-centered">
-              <div class="column is-narrow"> <p class="label has-text-centered">Select Garment</p>
-                <div class="vertical-scroll-box">
-                  <figure class="image-container mb-4" onclick="selectGarment('xl', this)">
-                    <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 has-text-weight-semibold mt-1 has-text-centered">
-                      Size XS
-                    </figcaption>
-                  </figure>
-                  <figure class="image-container mb-4" onclick="selectGarment('xl', this)">
-                    <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 has-text-weight-semibold mt-1 has-text-centered">
-                      Size S
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-
-              <div class="column is-narrow">
-                <div class="main-display has-text-centered">
-                  <img id="result-image" src="static/images/vto/xl_xs.png" style="max-height: 500px;">
-                </div>
-                <p class="label has-text-centered">Select Person</p>
-              </div> 
-            </div>
-
-            <div class="columns is-mobile is-variable is-1 mt-4 person-row">
-                <div class="column is-2">
-                  <figure class="image-container" onclick="selectPerson('xs', this)">
-                    <img src="static/images/vto/p_xs.png" class="thumb person-thumb">
-                    <figcaption class="is-size-7 mt-1 has-text-centered">Size XS</figcaption>
-                  </figure>
-                </div>
-                <div class="column is-2">
-                  <figure class="image-container" onclick="selectPerson('s', this)">
-                    <img src="static/images/vto/p_s.png" class="thumb person-thumb">
-                    <figcaption class="is-size-7 mt-1 has-text-centered">Size S</figcaption>
-                  </figure>
-                </div>
-                <div class="column is-2">
-                  <figure class="image-container" onclick="selectPerson('m', this)">
-                    <img src="static/images/vto/p_m.png" class="thumb person-thumb">
-                    <figcaption class="is-size-7 mt-1 has-text-centered">Size M</figcaption>
-                  </figure>
-                </div>
-                <div class="column is-2">
-                  <figure class="image-container" onclick="selectPerson('l', this)">
-                    <img src="static/images/vto/p_l.png" class="thumb person-thumb">
-                    <figcaption class="is-size-7 mt-1 has-text-centered">Size L</figcaption>
-                  </figure>
-                </div>
-                <div class="column is-2">
-                  <figure class="image-container" onclick="selectPerson('xl', this)">
-                    <img src="static/images/vto/p_xl.png" class="thumb person-thumb">
-                    <figcaption class="is-size-7 mt-1 has-text-centered">Size XL</figcaption>
-                  </figure>
-                </div>
-                <div class="column is-2">
-                  <figure class="image-container" onclick="selectPerson('2xl', this)">
-                    <img src="static/images/vto/p_2xl.png" class="thumb person-thumb">
-                    <figcaption class="is-size-7 mt-1 has-text-centered">Size 2XL</figcaption>
-                  </figure>
-                </div>
-                <div class="column is-2">
-                  <figure class="image-container" onclick="selectPerson('3xl', this)">
-                    <img src="static/images/vto/p_3xl.png" class="thumb person-thumb">
-                    <figcaption class="is-size-7 mt-1 has-text-centered">Size 3XL</figcaption>
-                  </figure>
-                </div>
-                </div>
+      </div>
+      <div class="columns is-mobile is-centered is-align-items-start">
+        <div class="column is-narrow"> 
+          <p class="label has-text-centered">Select Garment</p>
+          <div class="garment-grid">
+            <figure class="image-container" onclick="selectGarment('xl', this)">
+              <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
+              <figcaption class="is-size-7 has-text-centered">XS</figcaption>
+            </figure>
+            <figure class="image-container" onclick="selectGarment('xl', this)">
+              <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
+              <figcaption class="is-size-7 has-text-centered">S</figcaption>
+            </figure>
             </div>
           </div>
-        </div>
+
+          <div class="column is-narrow">
+            <div class="main-display has-text-centered">
+              <img id="result-image" src="static/images/vto/xl_xs.png" style="max-height: 500px;">
+            </div>
+          </div> 
+
+          <div class="column is-narrow">
+            <p class="label has-text-centered">Select Person</p>
+            <div class="person-grid">
+              <figure class="image-container" onclick="selectPerson('xs', this)">
+                <img src="static/images/vto/p_xs.png" class="thumb person-thumb">
+                <figcaption class="is-size-7 has-text-centered">XS</figcaption>
+              </figure>
+              <figure class="image-container" onclick="selectPerson('s', this)">
+                <img src="static/images/vto/p_s.png" class="thumb person-thumb">
+                <figcaption class="is-size-7 has-text-centered">S</figcaption>
+              </figure>
+              <figure class="image-container" onclick="selectPerson('m', this)">
+                <img src="static/images/vto/p_m.png" class="thumb person-thumb">
+                <figcaption class="is-size-7 has-text-centered">M</figcaption>
+              </figure>
+              <figure class="image-container" onclick="selectPerson('l', this)">
+                <img src="static/images/vto/p_l.png" class="thumb person-thumb">
+                <figcaption class="is-size-7 has-text-centered">L</figcaption>
+              </figure>
+              <figure class="image-container" onclick="selectPerson('xl', this)">
+                <img src="static/images/vto/p_xl.png" class="thumb person-thumb">
+                <figcaption class="is-size-7 has-text-centered">XL</figcaption>
+              </figure>
+              <figure class="image-container" onclick="selectPerson('2xl', this)">
+                <img src="static/images/vto/p_2xl.png" class="thumb person-thumb">
+                <figcaption class="is-size-7 has-text-centered">2XL</figcaption>
+              </figure>
+              <figure class="image-container" onclick="selectPerson('3xl', this)">
+                <img src="static/images/vto/p_3xl.png" class="thumb person-thumb">
+                <figcaption class="is-size-7 has-text-centered">3XL</figcaption>
+              </figure>
+            </div>
+          </div>
+
       </div>
     </div>
     <!--/ VTO Demo. -->
