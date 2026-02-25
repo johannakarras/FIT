@@ -168,9 +168,9 @@ input[type=range] {
 /* Ensure the grid item is the reference point for absolute positioning */
 .grid-item {
   position: relative;
-  flex: 0 0 150px; /* Do not grow, do not shrink, stay at 150px */
+  flex: 0 0 200px; /* Do not grow, do not shrink, stay at 200px */
   width: 150px;
-  height: 150px;
+  height: 200px;
 }
 
 .grid-item img {
@@ -184,8 +184,8 @@ input[type=range] {
 .grid-item.is-expanded {
   /* To keep it within 4 rows, don't exceed 600px */
   width: 450px; 
-  height: 450px;
-  flex: 0 0 450px;
+  height: 600px;
+  flex: 0 0 600px;
 }
 
 /* Container for the two small images */
