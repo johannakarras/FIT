@@ -1,7 +1,17 @@
 /* Template Style Customizations */
-.title.is-3{
-  background: #dbdbdb;
+.section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.title.is-3 {
+  background: #eeeeeea2;
   padding: 3%;
+}
+a {
+  color: #66b7c0;
+}
+.footer {
+  background-color: #7cd8d742;
 }
 /* End Template Style Customizations */
 
@@ -14,6 +24,20 @@
   height: auto;
 }
 /* End FIT Teaser */
+
+/* Dataset Comparison Table*/
+.table-wrapper {
+  width: 70%;
+  margin: 2rem auto; /* Centers horizontally and adds vertical spacing */
+}
+
+/* Optional: Ensure it expands to 90% or 100% on small mobile screens */
+@media (max-width: 768px) {
+  .table-wrapper {
+    width: 95%;
+  }
+}
+/* End Dataset Comparison Table*/
 
 /* VTO Demo */
 /* 1. Force Horizontal Layout */
@@ -51,7 +75,7 @@
 }
 
 .thumb.is-active {
-  border-color: #00d1b2;
+  border-color: #7cd8d7;
   box-shadow: 0 0 8px rgba(0, 209, 178, 0.3);
 }
 
@@ -102,7 +126,7 @@
 
 /* Optional: Customize the slider color to match Nerfies */
 input[type=range] {
-  accent-color: #00d1b2;
+  accent-color: #7cd8d7;
 }
 
 .size-labels {
@@ -153,7 +177,7 @@ input[type=range] {
   
   /* Custom scrollbar styling for a cleaner look */
   scrollbar-width: thin;
-  scrollbar-color: #00d1b2 #f5f5f5;
+  scrollbar-color: #7cd8d7 #f5f5f5;
 }
 
 /* For Chrome/Safari scrollbar */
@@ -161,7 +185,7 @@ input[type=range] {
   height: 8px;
 }
 .dataset-grid::-webkit-scrollbar-thumb {
-  background: #00d1b2;
+  background: #7cd8d7;
   border-radius: 10px;
 }
 
@@ -268,7 +292,7 @@ input[type=range] {
 /* Hover effects */
 .grid-item:hover {
   transform: translateY(-5px); /* Subtle lift effect */
-  border-color: #00d1b2; /* Bulma's primary turquoise */
+  border-color: #7cd8d7; /* Bulma's primary turquoise */
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   z-index: 2; /* Ensures the hover shadow sits above neighbors */
 }
@@ -383,7 +407,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: #66b7c0; !important;
 }
 
 .publication-authors a:hover {

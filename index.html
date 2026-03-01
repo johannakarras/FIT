@@ -76,8 +76,8 @@
             <span class="author-block"><sup>2</sup>Google Research</span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>*</sup>Equal contribution</span>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution, listed alphabetically </span>
           </div>
 
 
@@ -143,8 +143,8 @@
   <div class="container is-fluid">
     <div class="hero-body">
       <img class="teaser-image" src="static/images/teaser.svg">
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">FIT Dataset</span>: A dataset and benchmark designed for <i>fit-aware</i> virtual try-on, featuring diverse garment fits (e.g. tight, loose) and precise size annotations. 
+      <h2 class="subtitle has-text-centered" style="font-size:1.1rem;">
+        We present the <span class="dnerf">FIT Dataset</span>: A dataset and benchmark designed for <i>fit-aware</i> virtual try-on, featuring diverse garment fits (e.g. tight, loose) and precise size annotations. 
         <i>Left:</i> Sample dataset triplets showing the conditioning garent image (<i>top</i>), the conditioning person image (<i>middle</i>), and the target try-on image (<i>bottom</i>). 
         <i>Right:</i> Visualization of the corresponding person and garent measurement annotations. Backgrounds removed for clarity.
       </h2>
@@ -152,11 +152,11 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:0rem; padding-bottom:0rem;background-color: #eee;">
+<section class="section" style="padding-top:0rem; padding-bottom:0rem;background-color: #7cd8d742">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column">
         <h2 class="title is-3" style="background:none; padding:0px;">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -195,98 +195,113 @@
   <div class="container is-fluid">
     <!-- Browse Dataset -->
     <div class="container">
-      <h2 class="title is-3 has-text-centered">FIT Dataset</h2>
+      <h2 class="title is-3 has-text-centered is-flex is-align-items-center is-justify-content-center" style="margin-top:2rem; gap: 15px;">
+        <img src="./static/images/favicon.svg" alt="FIT Logo" style="height: 2em; width: auto;">
+        <span>FIT Dataset</span>
+      </h2>
       <h2 class="title is-5 has-text-centered">Browse the FIT Dataset</h2>
-      <p class="has-text-centered" style="margin-bottom:3%;">Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements.</p>
-      <div id="dataset-grid" class="dataset-grid" style="background-color:#eee"></div>
+      <p>
+        The FIT dataset consists of 1,137,282 training and 1000 test samples, each consisting of 
+        $(I_{\text{try-on}}, I_{\text{p}}, I_g, m_p, m_g)$. FIT covers 168 distinct body 
+        shapes (82 men's, 86 women's) in sizes XS-3XL, 528 body poses, as well as 158,483 
+        unique top and garment designs. The garments come in a diverse range of fits, from 
+        loose to tight fits. Refer to our paper for additional dataset statistics.
+      </p>
+      <br>
+      <p class="has-text-centered" style="margin-bottom:1%;">
+        <i>Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements.</i>
+      </p>
+      <div id="dataset-grid" class="dataset-grid" style="background-color:#eeeeeea2"></div>
     </div>
     <!--/ Browse Dataset-->
     <!-- Dataset Statistic -->
     <div class="container mt-5">
-      <h2 class="title is-5 has-text-centered">FIT Datset Comparison</h2>
-      <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered">
-          <thead>
-            <tr>
-              <th>Dataset</th>
-              <th>Realism</th>
-              <th>Ill-Fit</th>
-              <th>Size Info</th>
-              <th>Triplet</th>
-              <th>Scale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>SV-VTO</td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td>1,524</td>
-            </tr>
-            <tr>
-              <td>SIZER</td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td>2,000</td>
-            </tr>
-            <tr>
-              <td>DeepFashion3D</td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td>2,078</td>
-            </tr>
-            <tr>
-              <td>ViTON-HD</td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td>11,647</td>
-            </tr>
-            <tr>
-              <td>LAION-Garment</td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td>60K</td>
-            </tr>
-            <tr>
-              <td>SewFactory</td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td>1M</td>
-            </tr>
-            <tr>
-              <td>GCD</td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-danger">✗</span></td>
-              <td>115K</td>
-            </tr>
-            <tr class="has-text-weight-bold" style="background-color: #f0fdfa;">
-              <td>Ours</td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td><span class="has-text-success">✓</span></td>
-              <td>1.13M</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="is-size-5 has-text-centered">
+      <h2 class="title is-5 has-text-centered">FIT Dataset Comparison</h2>
+      <p class="has-text-centered" style="margin-bottom: 1%;">
         We compare FIT to related datasets. FIT is the first large-scale dataset for virtual try-on that provides photorealistic images, ill-fit examples, precise measurement information, and ground-truth paired-person images. For scale, we report the number of training images.
       </p>
+      <div class="table-wrapper">
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered">
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Realism</th>
+                <th>Ill-Fit</th>
+                <th>Size Info</th>
+                <th>Triplet</th>
+                <th>Scale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SV-VTO</td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td>1,524</td>
+              </tr>
+              <tr>
+                <td>SIZER</td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td>2,000</td>
+              </tr>
+              <tr>
+                <td>DeepFashion3D</td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td>2,078</td>
+              </tr>
+              <tr>
+                <td>ViTON-HD</td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td>11,647</td>
+              </tr>
+              <tr>
+                <td>LAION-Garment</td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td>60K</td>
+              </tr>
+              <tr>
+                <td>SewFactory</td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td>1M</td>
+              </tr>
+              <tr>
+                <td>GCD</td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-danger">✗</span></td>
+                <td>115K</td>
+              </tr>
+              <tr class="has-text-weight-bold" style="background-color: #f0fdfa;">
+                <td>Ours</td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td><span class="has-text-success">✓</span></td>
+                <td>1.13M</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <!--/ Dataset Statistics -->
   </div>
@@ -363,7 +378,7 @@
     <div class="columns is-centered" style="margin-top:5%;">
       <div class="column is-full-width has-text-centered">
         <h2 class="title is-3">Garment Resizing Demo</h2>
-        <p style="margin-bottom:3%;">Try on different sizes of the same garment. </p>
+        <p style="margin-bottom:3%;">Try on different sizes of the same garment! Not all sizes are wearable for every body. </p>
           <div class="container" style="max-width: 700px;">
             <div class="columns is-mobile is-variable is-3 is-centered">
               <!-- Selection of Images -->
@@ -413,18 +428,18 @@
 </section>
 
 <!-- Methods. -->
-<section class="section" style="padding-bottom:0rem;background-color: #eee;">
+<section class="section" style="background-color: #eee;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="content has-text-justified">
-        <h2 class="title is-3" style="background:none; padding:0px;">Method</h2>
+        <h2 class="title is-3" style="background:none; padding:0px; padding-top:1rem;">Method</h2>
       </div>
     </div>
     <div class="columns has-text-centered">
       <div class="content has-text-justified">
         <h2 class="title is-5" style="background:none; padding:0px;">FIT Dataset Generation Pipeline</h2>
         <img class="teaser-image" src="static/images/data_pipeline.svg">
-        <p style="margin-top:3%; margin-bottom:3%;">
+        <p style="margin-top:1%; margin-bottom:3%;">
           <b>(a)</b> Overall workflow: We start by simulating a 3D garment on a target body via GarmentCode to render a synthetic image $I_s$. We generate a text prompt $p$ (via VLM) and a composite normal map $I_n$ (stitching estimated normals with realistic head/feet details). These condition our re-texturing model $f_\text{texture}$ to produce the try-on image $I_{\text{try-on}}$. Finally, we use $f_\text{paired}$ to generate a paired person image $I_p$, and a VLM to synthesize a layflat garment $I_g$.
           <b>(b)</b> GarmentCode simulation: Given a sampled design template, we compute sewing patterns for a specific body size. Then, we cross-drape these patterns onto a different target body, using box-mesh realignment to prevent simulation failures, and extract ground-truth measurements. (c) Using source and target garments draped on the same body, we derive an identity map $I_\text{id}$ by masking the garment in $I_{\text{try-on}}$. Conditioned on $I_\text{id}$, a paired normal map $I_n'$, and a paired prompt $p'$, $f_\text{paired}$ generates the paired person image $I_p$.
         </p>
@@ -434,7 +449,7 @@
       <div class="content has-text-justified">
         <h2 class="title is-5" style="background:none; padding:0px;">FIT-Aware Virtual Try-On</h2>
         <img class="teaser-image" src="static/images/architecture.svg">
-        <p style="margin-top:3%; margin-bottom:3%;">
+        <p style="margin-top:1%; margin-bottom:3%;">
           Our architecture is a flow-based model based on Flux.1-dev MMDiT architecture and finetuned with LoRA. 
           FiT-VTO generates a try-on image $I_{\text{try-on}}$ given a layflat garment image $I_g$, paired person 
           image $I_p$, and person-garment measurements  $m = [m_p, m_g]$. First, image inputs $I_g$ and $I_p$ 
