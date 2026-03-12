@@ -427,44 +427,6 @@
   </div>
 </section>
 
-<!-- Methods. -->
-<section class="section" style="background-color: #eee;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="content has-text-justified">
-        <h2 class="title is-3" style="background:none; padding:0px; padding-top:1rem;">Method</h2>
-      </div>
-    </div>
-    <div class="columns has-text-centered">
-      <div class="content has-text-justified">
-        <h2 class="title is-5" style="background:none; padding:0px;">FIT Dataset Generation Pipeline</h2>
-        <img class="teaser-image" src="static/images/data_pipeline.svg">
-        <p style="margin-top:1%; margin-bottom:3%;">
-          <b>(a)</b> Overall workflow: We start by simulating a 3D garment on a target body via GarmentCode to render a synthetic image $I_s$. We generate a text prompt $p$ (via VLM) and a composite normal map $I_n$ (stitching estimated normals with realistic head/feet details). These condition our re-texturing model $f_\text{texture}$ to produce the try-on image $I_{\text{try-on}}$. Finally, we use $f_\text{paired}$ to generate a paired person image $I_p$, and a VLM to synthesize a layflat garment $I_g$.
-          <b>(b)</b> GarmentCode simulation: Given a sampled design template, we compute sewing patterns for a specific body size. Then, we cross-drape these patterns onto a different target body, using box-mesh realignment to prevent simulation failures, and extract ground-truth measurements. (c) Using source and target garments draped on the same body, we derive an identity map $I_\text{id}$ by masking the garment in $I_{\text{try-on}}$. Conditioned on $I_\text{id}$, a paired normal map $I_n'$, and a paired prompt $p'$, $f_\text{paired}$ generates the paired person image $I_p$.
-        </p>
-      </div>
-    </div>
-    <div class="columns has-text-centered">
-      <div class="content has-text-justified">
-        <h2 class="title is-5" style="background:none; padding:0px;">FIT-Aware Virtual Try-On</h2>
-        <img class="teaser-image" src="static/images/architecture.svg">
-        <p style="margin-top:1%; margin-bottom:3%;">
-          Our architecture is a flow-based model based on Flux.1-dev MMDiT architecture and finetuned with LoRA. 
-          FiT-VTO generates a try-on image $I_{\text{try-on}}$ given a layflat garment image $I_g$, paired person 
-          image $I_p$, and person-garment measurements  $m = [m_p, m_g]$. First, image inputs $I_g$ and $I_p$ 
-          are encoded into latents separately through a pre-trained VAE encoder. We replace the text embeddings 
-          in Flux.1-dev with custom measurement embeddings $m_{\text{embed}}$ computed from $m$. Person latents 
-          are channel-concatenated with the noisy target latents, while layflat latents and  $m_{\text{embed}}$ 
-          are sequence-wise concatenated with $z_t$. After processing through the diffusion transformer, clean 
-          latents are decoded by the VAE decoder.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!--/ Methods -->
-
 <!-- SOTA Comparisons -->
 <section class="section">
   <div class="container is-fluid" style="max-width: none !important; width: 95%;">
@@ -481,6 +443,20 @@
         <div class="slider-track" id="comparison-track">
           
           <div class="comparison-set">
+            <div class="comparison-meta">
+              <div class="meta-content">
+                <div class="meta-coarse">XS person,<br>XL garment</div>
+                <div class="meta-precise custom-monospace">
+                  <span>Bust: 32cm</span>
+                  <span>Height: 163cm</span>
+                  <span>Waist: 38cm</span>
+                  <span>Hips: 32cm</span>
+                  <span>Length: 55cm</span>
+                  <span>Width: 44cm</span>
+                  <span>Sleeve: 4cm</span>
+                </div>
+              </div>
+            </div>
             <div class="comparison-item">
               <img src="static/images/sota/example1/any2any.png" alt="Any2AnyTryOn">
               <p class="subtitle is-6">Any2AnyTryOn</p>
@@ -508,6 +484,20 @@
           </div>
 
           <div class="comparison-set">
+            <div class="comparison-meta">
+              <div class="meta-content">
+                <div class="meta-coarse">XS person,<br>XL garment</div>
+                <div class="meta-precise custom-monospace">
+                  <span>Bust: 32cm</span>
+                  <span>Height: 163cm</span>
+                  <span>Waist: 38cm</span>
+                  <span>Hips: 32cm</span>
+                  <span>Length: 55cm</span>
+                  <span>Width: 44cm</span>
+                  <span>Sleeve: 4cm</span>
+                </div>
+              </div>
+            </div>
             <div class="comparison-item">
               <img src="static/images/sota/example2/any2any.png" alt="Any2AnyTryOn">
               <p class="subtitle is-6">Any2AnyTryOn</p>
@@ -547,6 +537,45 @@
   </div>
 </section>
 <!--/SOTA Comparisons -->
+
+<!-- Methods. -->
+<section class="section" style="background-color: #eee;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <h2 class="title is-3" style="background:none; padding:0px; padding-top:1rem;">Method</h2>
+      </div>
+    </div>
+    <div class="columns has-text-centered">
+      <div class="content has-text-justified">
+        <h2 class="title is-5" style="background:none; padding:0px;">FIT Dataset Generation Pipeline</h2>
+        <img class="teaser-image" src="static/images/data_pipeline.svg">
+        <p style="margin-top:1%; margin-bottom:3%;">
+          <b>(a)</b> Overall workflow: We start by simulating a 3D garment on a target body via GarmentCode to render a synthetic image $I_s$. We generate a text prompt $p$ (via VLM) and a composite normal map $I_n$ (stitching estimated normals with realistic head/feet details). These condition our re-texturing model $f_\text{texture}$ to produce the try-on image $I_{\text{try-on}}$. Finally, we use $f_\text{paired}$ to generate a paired person image $I_p$, and a VLM to synthesize a layflat garment $I_g$.
+          <b>(b)</b> GarmentCode simulation: Given a sampled design template, we compute sewing patterns for a specific body size. Then, we cross-drape these patterns onto a different target body, using box-mesh realignment to prevent simulation failures, and extract ground-truth measurements. (c) Using source and target garments draped on the same body, we derive an identity map $I_\text{id}$ by masking the garment in $I_{\text{try-on}}$. Conditioned on $I_\text{id}$, a paired normal map $I_n'$, and a paired prompt $p'$, $f_\text{paired}$ generates the paired person image $I_p$.
+        </p>
+      </div>
+    </div>
+    <div class="columns has-text-centered">
+      <div class="content has-text-justified">
+        <h2 class="title is-5" style="background:none; padding:0px;">FIT-Aware Virtual Try-On</h2>
+        <img class="teaser-image" src="static/images/architecture.svg">
+        <p style="margin-top:1%; margin-bottom:3%;">
+          Our architecture is a flow-based model based on Flux.1-dev MMDiT architecture and finetuned with LoRA. 
+          FiT-VTO generates a try-on image $I_{\text{try-on}}$ given a layflat garment image $I_g$, paired person 
+          image $I_p$, and person-garment measurements  $m = [m_p, m_g]$. First, image inputs $I_g$ and $I_p$ 
+          are encoded into latents separately through a pre-trained VAE encoder. We replace the text embeddings 
+          in Flux.1-dev with custom measurement embeddings $m_{\text{embed}}$ computed from $m$. Person latents 
+          are channel-concatenated with the noisy target latents, while layflat latents and  $m_{\text{embed}}$ 
+          are sequence-wise concatenated with $z_t$. After processing through the diffusion transformer, clean 
+          latents are decoded by the VAE decoder.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Methods -->
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">

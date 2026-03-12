@@ -192,28 +192,7 @@ function toggleExpand(element) {
 // ------------ Browse Dataset ------------ 
 
 // ------------ SOTA Comparison -----------
-//  Define data for each row
-const comparisonData = [
-    {
-        coarse: "XS person, XL garment",
-        precise: "Bust = 32cm, Height = 163cm, Waist = 38cm, Hips = 32cm, Garment Length = 55cm, Garment Width = 44cm, Sleeve Length = 4cm"
-    },
-    {
-        coarse: "M person, S garment",
-        precise: "Bust = 38cm, Height = 170cm, Waist = 32cm, Hips = 38cm, Garment Length = 45cm, Garment Width = 38cm, Sleeve Length = 6cm"
-    },
-    // Add more rows as needed...
-];
-
 let currentSlide = 0;
-
-function updateCaption() {
-    const data = comparisonData[currentSlide];
-    if (data) {
-        document.getElementById('caption-coarse').innerText = data.coarse;
-        document.getElementById('caption-precise').innerText = data.precise;
-    }
-}
 
 function moveSlider(direction) {
     const track = document.getElementById('comparison-track');
@@ -234,12 +213,7 @@ function moveSlider(direction) {
     const offset = currentSlide * -100;
     track.style.transform = `translateX(${offset}%)`;
 
-    // Update the text
-    updateCaption();
 }
-
-// Initialize the first caption on page load
-window.onload = updateCaption;
 
 // ------------ End SOTA Comparison -------
 
