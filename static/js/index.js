@@ -191,6 +191,30 @@ function toggleExpand(element) {
 }
 // ------------ Browse Dataset ------------ 
 
+// ------------ SOTA Comparison -----------
+let currentSlide = 0;
+
+function moveSlider(direction) {
+    const track = document.getElementById('comparison-track');
+    // Count how many 'comparison-set' groups you have
+    const slides = document.querySelectorAll('.comparison-set');
+    const totalSlides = slides.length;
+    
+    currentSlide += direction;
+
+    // Loop logic
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0; // Go back to the first
+    } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1; // Go to the last
+    }
+
+    // IMPORTANT: Use negative currentSlide to pull the track to the left
+    const offset = currentSlide * -100;
+    track.style.transform = `translateX(${offset}%)`;
+}
+// ------------ End SOTA Comparison -------
+
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;
 
