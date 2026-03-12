@@ -391,6 +391,46 @@ input[type=range] {
 }
 
 .slider-arrow:hover { color: #00d1b2; }
+.comparison-caption-box {
+  background-color: #f9f9f9;
+  border-top: 3px solid #00d1b2;
+  border-radius: 8px;
+  padding: 1.5rem;
+  
+  /* Use ONLY Flexbox to stack items vertically */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; 
+  justify-content: center !important;
+  
+  /* Ensure the box takes up enough width to center its children */
+  width: 95%;
+  max-width: 1200px;
+  margin: 2rem auto; 
+}
+
+#caption-coarse {
+  color: #333;
+  font-size: 1.0rem; /* Slightly smaller as requested */
+  margin-bottom: 10px !important; /* Creates space between rows without overlapping */
+  text-align: center;
+  width: 100%;
+  line-height: 1.2; /* Normal line height */
+}
+
+#caption-precise {
+  color: #7a7a7a;
+  font-size: 0.8rem; /* Smaller font for measurements */
+  line-height: 1.4; /* Standard readable spacing */
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto; /* Ensures the text block itself is centered */
+}
+
+.custom-monospace {
+  font-family: 'Courier New', Courier, monospace;
+}
 /* End SOTA Comparisons */
 
 body {

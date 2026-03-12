@@ -469,7 +469,11 @@
 <section class="section">
   <div class="container is-fluid" style="max-width: none !important; width: 95%;">
     <h2 class="title is-3 has-text-centered">Comparisons to State-of-the-Art</h2>
-    
+    <p class="is-centered">Prior virtual try-on works excel at garment appearance transfer and generating aesthetically-pleasing 
+      images. However, prior works lack precise measurement conditioning, instead hallucinating garment fit.
+      In contrast, Fit-VTO generates high-quality virtual try-on results, while also being measurement-conditioned.
+      We show results on both the FIT and VITON-HD test datasets.
+    </p>
     <div class="comparison-slider-wrapper">
       <button class="slider-arrow left" onclick="moveSlider(-1)">&#10094;</button>
       
@@ -495,11 +499,11 @@
             </div>
             <div class="comparison-item">
               <img src="static/images/sota/example1/ours.png" alt="Ours">
-              <p class="subtitle is-6">Ours</p>
+              <p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p>
             </div>
             <div class="comparison-item">
               <img src="static/images/sota/example1/gt.png" alt="Ground Truth">
-              <p class="subtitle is-6 has-text-weight-bold has-text-primary">Ground Truth</p>
+              <p class="subtitle is-6 has-text-weight-bold">Ground Truth</p>
             </div>
           </div>
 
@@ -521,19 +525,24 @@
               <p class="subtitle is-6">IDM-VTON</p>
             </div>
             <div class="comparison-item">
-              <img src="static/images/sota/example2/ours.png" alt="Ours">
-              <p class="subtitle is-6">Ours</p>
+              <img src="static/images/sota/example1/ours.png" alt="Ours">
+              <p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p>
             </div>
             <div class="comparison-item">
               <img src="static/images/sota/example2/gt.png" alt="Ground Truth">
-              <p class="subtitle is-6 has-text-weight-bold has-text-primary">Ground Truth</p>
+              <p class="subtitle is-6 has-text-weight-bold">Ground Truth</p>
             </div>
           </div>
 
         </div>
       </div>
-
       <button class="slider-arrow right" onclick="moveSlider(1)">&#10095;</button>
+    </div>
+    <div class="container has-text-centered mt-5" style="margin-top:0px !important;">
+      <div id="comparison-caption" class="comparison-caption">
+        <p id="caption-coarse" class="title is-6 mb-1 has-text-centered has-text-weight-bold"></p>
+        <p id="caption-precise" class="subtitle is-7 has-text-centered custom-monospace"></p>
+      </div>
     </div>
   </div>
 </section>
