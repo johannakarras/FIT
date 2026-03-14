@@ -434,7 +434,7 @@
     <p class="is-centered">Prior virtual try-on works excel at garment appearance transfer and generating aesthetically-pleasing 
       images. However, prior works lack precise measurement conditioning, instead hallucinating garment fit.
       In contrast, Fit-VTO generates high-quality virtual try-on results, while also being measurement-conditioned.
-      We show results on both the FIT and VITON-HD test datasets.
+      We show results on both the FIT and VITON-HD test datasets. Note that VITON-HD does not include measurements.
     </p>
     <div class="comparison-slider-wrapper">
       <button class="slider-arrow left" onclick="moveSlider(-1)">&#10094;</button>
@@ -493,22 +493,22 @@
           <div class="comparison-set">
             <div class="comparison-meta">
               <div class="meta-content">
-                <div class="meta-coarse">XS person,<br>XL garment</div>
+                <div class="meta-coarse">XL person,<br>XS garment</div>
                 <div class="meta-precise custom-monospace">
-                  <span>Bust: 84cm</span>
-                  <span>Height: 167cm</span>
-                  <span>Hips: 89cm</span>
-                  <span>Waist: 63cm</span>
-                  <span>Width: 117cm</span>
-                  <span>Length: 51cm</span>
-                  <span>Sleeve: 23cm</span>
+                  <span>Bust: 107cm</span>
+                  <span>Height: 176cm</span>
+                  <span>Hips: 107cm</span>
+                  <span>Waist: 93cm</span>
+                  <span>Width: 98cm</span>
+                  <span>Length: 47cm</span>
+                  <span>Sleeve: 22cm</span>
                 </div>
               </div>
             </div>
             <div class="input-media-item">
               <div class="input-stack">
-                <img src="static/images/sota/example1/input_person.png" class="input-img-tall" alt="Input Person">
-                <img src="static/images/sota/example1/input_garment.png" class="input-img-square" alt="Input Garment">
+                <img src="static/images/sota/example2/input_person.png" class="input-img-tall" alt="Input Person">
+                <img src="static/images/sota/example2/input_garment.png" class="input-img-square" alt="Input Garment">
               </div>
               <p class="subtitle is-7">Inputs</p>
             </div>
@@ -529,11 +529,59 @@
               <p class="subtitle is-6">IDM-VTON</p>
             </div>
             <div class="comparison-item">
-              <img src="static/images/sota/example1/ours.png" alt="Ours">
+              <img src="static/images/sota/example2/ours.png" alt="Ours">
               <p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p>
             </div>
             <div class="comparison-item">
               <img src="static/images/sota/example2/gt.png" alt="Ground Truth">
+              <p class="subtitle is-6 has-text-weight-bold">Ground Truth</p>
+            </div>
+          </div>
+        
+          <div class="comparison-set">
+            <div class="comparison-meta">
+              <div class="meta-content">
+                <div class="meta-coarse">XS person,<br>3XL garment</div>
+                <div class="meta-precise custom-monospace">
+                  <span>Bust: 86cm</span>
+                  <span>Height: 161cm</span>
+                  <span>Hips: 89cm</span>
+                  <span>Waist: 69cm</span>
+                  <span>Width: 123cm</span>
+                  <span>Length: 51cm</span>
+                  <span>Sleeve: 22cm</span>
+                </div>
+              </div>
+            </div>
+            <div class="input-media-item">
+              <div class="input-stack">
+                <img src="static/images/sota/example3/input_person.png" class="input-img-tall" alt="Input Person">
+                <img src="static/images/sota/example3/input_garment.png" class="input-img-square" alt="Input Garment">
+              </div>
+              <p class="subtitle is-7">Inputs</p>
+            </div>
+            <div class="comparison-item">
+              <img src="static/images/sota/example3/any2any.png" alt="Any2AnyTryOn">
+              <p class="subtitle is-6">Any2AnyTryOn</p>
+            </div>
+            <div class="comparison-item">
+              <img src="static/images/sota/example3/nanobanana.png" alt="Nano Banana Pro">
+              <p class="subtitle is-6">Nano Banana Pro</p>
+            </div>
+            <div class="comparison-item">
+              <img src="static/images/sota/example3/cotton.png" alt="COTTON">
+              <p class="subtitle is-6">COTTON</p>
+            </div>
+            <div class="comparison-item">
+              <img src="static/images/sota/example3/idm.png" alt="IDM-VTON">
+              <p class="subtitle is-6">IDM-VTON</p>
+            </div>
+            <div class="comparison-item">
+              <img src="static/images/sota/example3/ours.png" alt="Ours">
+              <p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p>
+            </div>
+            <div class="comparison-item">
+              <img src="static/images/sota/example3/gt.png" alt="Ground Truth">
               <p class="subtitle is-6 has-text-weight-bold">Ground Truth</p>
             </div>
           </div>
