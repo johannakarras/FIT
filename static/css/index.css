@@ -663,3 +663,94 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+
+/* Detect and adapt to small screens */
+@media (max-width: 768px) {
+  /* 1. Make the section use the full mobile width */
+  .container.is-fluid {
+    width: 100% !important;
+    padding: 0 5px !important;
+  }
+  .columns.is-mobile {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* 2. Make the center result images fit the screen width */
+  .main-display-column, 
+  .main-display img, 
+  #result-image, 
+  #slider-result-image {
+    width: 100% !important;
+    max-width: 90vw !important;
+    height: auto !important;
+  }
+
+  /* 3. Adjust the selection grids for mobile */
+  .garment-grid, .person-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 small thumbs per row instead of 2 */
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .vertical-scroll-box {
+    display: flex; /* Change from vertical stack to horizontal for the Resizing Demo */
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  /* 4. Ensure the slider fits the screen */
+  #size-slider {
+    width: 80vw !important;
+  }
+
+  .size-labels-container {
+    width: 80vw !important;
+    margin: 0 auto;
+  }
+
+  /* 2. Change the 8-column grid to a 2-column mobile grid */
+  .comparison-set {
+    grid-template-columns: 1fr 1.5fr; /* Sidebar and Inputs side-by-side */
+    grid-template-rows: auto auto auto; /* Results will wrap below */
+    gap: 15px 10px;
+    padding: 10px;
+  }
+
+  /* 3. Allow the result images to wrap to the next line */
+  .comparison-item {
+    display: flex;
+    flex-direction: column;
+    /* Force result images into a 2-column layout on mobile */
+    grid-column: span 1 !important; 
+    grid-row: auto !important;
+  }
+
+  /* 4. Reset the explicit column mapping so it doesn't break mobile */
+  .comparison-meta, .input-media-item, .comparison-item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Hide "inputs" label */
+  .input-media-item .subtitle {
+    display: none !important;
+  }
+
+  /* 5. Make images smaller so they fit 2-across */
+  .comparison-item img {
+    max-height: 250px;
+    aspect-ratio: 3/4;
+  }
+  
+  /* 6. Fix the 'skinny' issue on mobile by ensuring viewport isn't wider than screen */
+  body, html {
+    overflow-x: hidden;
+    position: relative;
+  }
+}
+/* */
