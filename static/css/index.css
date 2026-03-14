@@ -338,11 +338,14 @@ input[type=range] {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .slider-viewport {
   overflow: hidden;
+  flex-grow: 1; /* Forces the viewport to take up all available space between arrows */
   width: 100%;
 }
 
@@ -353,38 +356,29 @@ input[type=range] {
 
 .comparison-set {
   display: grid;
-  /* 7 columns: sidebar (0.6fr) + 6 images (1fr each) */
-  grid-template-columns: 0.6fr repeat(6, 1fr);
-  /* 2 rows: Top row for images/sidebar, Bottom row for captions */
+  /* 8 columns: Sidebar(0.6), Inputs(INCREASED to 1.2), 6 Results(1.0 each) */
+  grid-template-columns: 0.6fr 0.85fr repeat(6, 1fr);
   grid-template-rows: auto auto; 
   min-width: 100%;
-  gap: 10px 15px; /* 10px vertical gap, 15px horizontal gap */
+  gap: 5px 5px;
   padding: 20px 10px;
   align-items: stretch;
 }
 
-/* Sidebar: Force it to stay ONLY in the top row */
-.comparison-meta {
-  grid-row: 1; 
-  background-color: #7cd8d742;
-  border-right: 1px solid #eee;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Images: Force them into the top row */
-.comparison-item {
-  display: contents; /* This 'unwraps' the div so children follow parent grid */
+/* Allow children to participate in the grid */
+.input-media-item, .comparison-item {
+  display: contents;
 }
 
 .comparison-item img {
   grid-row: 1; /* Match the sidebar row */
   width: 100%;
-  height: auto;
-  max-height: 450px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 3 / 4;
   display: block;
+  min-height: 0px;
 }
 
 /* Captions: Force them into the second row */
@@ -399,16 +393,52 @@ input[type=range] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* Row 1: The Stacked Inputs and the Results */
+.input-stack {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  /* Top image gets 2 parts of space, bottom gets 1 part */
+  grid-template-rows: 2fr 1fr; 
+  gap: 5px;
+  height: 100%;
+  max-height: 300px; /* Limits the total height of the stack */
+  overflow: hidden; /* Prevents children from pushing the box larger */
+}
 
-/* Explicitly Column Mapping */
-.comparison-item:nth-of-type(1) img, .comparison-item:nth-of-type(1) .subtitle { grid-column: 1; }
-.comparison-item:nth-of-type(2) img, .comparison-item:nth-of-type(2) .subtitle { grid-column: 2; }
+/* Person Input Image */
+.input-img-tall, .input-img-square {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  /* Forces the image to respect the grid row height instead of its own natural height */
+  min-height: 0; 
+}
+
+/* --- Row 2: The Subtitles --- */
+.input-media-item .subtitle, 
+.comparison-item .subtitle {
+  grid-row: 2;
+  text-align: center;
+  margin: 0 !important;
+  padding-top: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* --- COLUMN MAPPING FIX --- */
+.input-media-item .subtitle { grid-column: 2; }
+
+/* We target the nth comparison-item and lock them to columns 3 through 8 */
 .comparison-item:nth-of-type(3) img, .comparison-item:nth-of-type(3) .subtitle { grid-column: 3; }
 .comparison-item:nth-of-type(4) img, .comparison-item:nth-of-type(4) .subtitle { grid-column: 4; }
 .comparison-item:nth-of-type(5) img, .comparison-item:nth-of-type(5) .subtitle { grid-column: 5; }
 .comparison-item:nth-of-type(6) img, .comparison-item:nth-of-type(6) .subtitle { grid-column: 6; }
 .comparison-item:nth-of-type(7) img, .comparison-item:nth-of-type(7) .subtitle { grid-column: 7; }
-
+.comparison-item:nth-of-type(8) img, .comparison-item:nth-of-type(8) .subtitle { grid-column: 8; }
 
 /* Optional: Make your method stand out */
 .ours-highlight {
@@ -429,26 +459,18 @@ input[type=range] {
 
 .slider-arrow:hover { color: #00d1b2; }
 
-.comparison-set {
-  display: grid;
-  grid-template-columns: 0.6fr repeat(6, 1fr); 
-  min-width: 100%;
-  gap: 15px;
-  /* Add padding at bottom to prevent captions from overlapping next section */
-  padding: 20px 10px 45px 10px; 
-  /* 'stretch' now only sees the image height */
-  align-items: stretch; 
-}
-
+/* Sidebar: Force it to stay ONLY in the top row */
 .comparison-meta {
+  grid-row: 1; 
+  background-color: #7cd8d742;
+  border-right: 1px solid #eee;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  text-align: left;
-  border-right: 1px solid #eee;
-  background-color: #7cd8d742;
-  border-radius: 4px;
-  /* This ensures the sidebar doesn't grow past the image limit */
-  max-height: 450px; 
+  max-height: 300px;
+}
+.comparison-meta, .input-stack, .comparison-item img {
+  grid-row: 1;
 }
 
 .meta-content {
