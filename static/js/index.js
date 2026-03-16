@@ -112,8 +112,16 @@ function selectGarmentSlider(id, element) {
 
 // ------------ Browse Dataset ------------ 
 const sampleData = {
-  1: { height: "173", bust: "85", waist: "62", hips: "90", length: "70", width: "50", sleeve: "60" },
-  2: { height: "165", bust: "80", waist: "60", hips: "85", length: "68", width: "48", sleeve: "58" },
+  1: { bust: "114", height: "171", hips: "121", waist: "102", width: "119", length: "50",  sleeve: "18" },
+  2: { bust: "90", height: "165", hips: "88", waist: "75", width: "101", length: "49",  sleeve: "18" },
+  3: { bust: "101", height: "178", hips: "104", waist: "86", width: "120", length: "75",  sleeve: "30" },
+  4: { bust: "117", height: "176", hips: "117", waist: "105", width: "131", length: "53",  sleeve: "0" },
+  5: { bust: "95", height: "172", hips: "100", waist: "77", width: "142", length: "53",  sleeve: "54" },
+  6: { bust: "123", height: "195", hips: "126", waist: "114", width: "114", length: "50",  sleeve: "16" },
+  7: { bust: "84", height: "163", hips: "90", waist: "63", width: "92", length: "45",  sleeve: "21" },
+  8: { bust: "141", height: "172", hips: "134", waist: "141", width: "134", length: "50",  sleeve: "48" },
+  9: { bust: "86", height: "162", hips: "89", waist: "68", width: "142", length: "58",  sleeve: "23" },
+  10: { bust: "94", height: "161", hips: "93", waist: "78", width: "104", length: "55",  sleeve: "20" },
 };
 document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.getElementById('dataset-grid');
