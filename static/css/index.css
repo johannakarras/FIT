@@ -228,11 +228,21 @@ input[type=range] {
 /* Style for the small overlay images */
 .asset-img {
   width: 100px !important;  /* Small size */
-  height: 100px !important;
   object-fit: cover;
   border: 2px solid white;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Specific styling for the garment (square) */
+.garment-asset {
+  height: 100px !important;
+}
+
+/* Specific styling for the triplet (tall) */
+.triplet-asset {
+  /* This makes it 1.5x taller than it is wide (150px tall) */
+  height: 150px !important; 
 }
 
 /* ONLY show the assets when expanded */
