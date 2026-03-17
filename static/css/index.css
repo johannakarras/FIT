@@ -39,6 +39,98 @@ a {
 }
 /* End Dataset Comparison Table*/
 
+/* VTO Demo (NEW) */
+.triplet-slider-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.triplet-viewport {
+  overflow: hidden; /* This hides Example 2 while Example 1 is visible */
+  width: 100%;
+  position: relative;
+}
+
+.triplet-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%; /* The track grows based on children */
+}
+
+.triplet-set {
+  /* This ensures each example takes up EXACTLY the full width of the viewport */
+  flex: 0 0 100%; 
+  width: 100%;
+  
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  gap: 15px;
+  align-items: stretch;
+  box-sizing: border-box; /* Prevents padding from adding to width */
+
+  justify-content: center;
+}
+
+/* The Right Image Anchor */
+.triplet-result {
+  height: 100%;
+  justify-self: start;
+}
+
+/* The Images */
+.triplet-result img {
+  width: 100%;
+  height: 100%; /* Forces the image to fill its grid slot */
+  max-height: 500px;
+  max-width: 384px;
+  /* 'cover' ensures the image fills the box. 'contain' will leave gaps. */
+  object-fit: contain; 
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Force the inputs to match that exact height */
+.triplet-inputs {
+  display: grid;
+  grid-template-rows: 1.5fr 1fr; 
+  gap: 10px;
+  /* This ensures the grid is exactly the height of the .triplet-set row */
+  height: 100%; 
+  /* Crucial: prevents the grid from expanding past the parent */
+  max-height: 500px; 
+  justify-self: end;
+}
+
+/* Ensure the image wrappers fill the grid slots */
+.input-upper, .input-lower {
+  height: 100%;
+  width: 100%;
+  min-height: 0; /* Important: allows grid items to shrink/fit */
+}
+
+.triplet-inputs img {
+  width: 100%;
+  height: 100%; 
+  object-fit: contain; 
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .triplet-set {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+  .triplet-inputs {
+    grid-template-columns: 1fr 1fr; /* Side-by-side inputs on mobile */
+    grid-template-rows: auto;
+  }
+}
+/* End VTO Demo (NEW) */
+
 /* VTO Demo */
 /* 1. Force Horizontal Layout */
 .columns.is-mobile {
@@ -53,15 +145,15 @@ a {
 /* 2. Grid Definitions */
 .garment-grid, .person-grid {
   display: grid;
-  grid-template-columns: repeat(2, 75px); /* Consistent width */
+  grid-template-columns: repeat(3, 100px); /* Consistent width */
   gap: 8px;
   justify-content: center;
 }
 
 /* 3. Thumbnail Styling (Consolidated) */
 .thumb {
-  width: 75px; 
-  height: 75px;
+  width: 100px; 
+  height: 125px;
   object-fit: cover;
   border-radius: 6px;
   cursor: pointer;

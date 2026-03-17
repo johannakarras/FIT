@@ -1,4 +1,33 @@
 window.HELP_IMPROVE_VIDEOJS = false;
+
+// ------------ VTO Demo ------------ 
+const tripletData = [
+  { label: "XS Person, 3XL Garment" }, // Example #1
+  { label: "2XL Person, 2XL Garment" }, // Example #3
+  { label: "M Person, XL Garment" }, // Example #4
+  { label: "XS Person, L Garment" }, // Example #5
+];
+
+let currentTriplet = 0;
+
+function moveTriplet(direction) {
+  const track = document.getElementById('triplet-track');
+  const label = document.getElementById('triplet-label');
+  const total = tripletData.length;
+
+  currentTriplet = (currentTriplet + direction + total) % total;
+
+  // Moves the track by exactly one full viewport width
+  track.style.transform = `translateX(-${currentTriplet * 100}%)`;
+  
+  // Update the text label
+  if(label) {
+    label.innerText = tripletData[currentTriplet].label;
+  }
+}
+
+// ------------ End VTO Demo ------------ 
+
 // ------------ VTO Demo ------------ 
 let currentGarment = 'xl';
 let currentPerson = 'xs';

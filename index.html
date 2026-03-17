@@ -307,9 +307,89 @@
   </div>
 </section>
 
+<!-- VTO Demo -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- VTO Demo -->
+    <h2 class="title is-3 has-text-centered">Fit-Aware Virtual Try-On Demo</h2>
+    
+    <div class="triplet-slider-wrapper">
+      <button class="slider-arrow left" onclick="moveTriplet(-1)">&#10094;</button>
+
+      <div class="triplet-viewport">
+        <div class="triplet-track" id="triplet-track">
+          
+          <div class="triplet-set">
+            <div class="triplet-inputs">
+              <div class="input-upper">
+                <img src="static/images/vto/triplet1.png" alt="Person">
+              </div>
+              <div class="input-lower">
+                <img src="static/images/vto/garment1.png" alt="Garment">
+              </div>
+            </div>
+            <div class="triplet-result">
+              <img src="static/images/vto/tryon1.png" alt="Try-on Result">
+            </div>
+          </div>
+
+          <div class="triplet-set">
+            <div class="triplet-inputs">
+              <div class="input-upper">
+                <img src="static/images/vto/triplet3.png" alt="Person">
+              </div>
+              <div class="input-lower">
+                <img src="static/images/vto/garment3.png" alt="Garment">
+              </div>
+            </div>
+            <div class="triplet-result">
+              <img src="static/images/vto/tryon3.png" alt="Try-on Result">
+            </div>
+          </div>
+
+          <div class="triplet-set">
+            <div class="triplet-inputs">
+              <div class="input-upper">
+                <img src="static/images/vto/triplet4.png" alt="Person">
+              </div>
+              <div class="input-lower">
+                <img src="static/images/vto/garment4.png" alt="Garment">
+              </div>
+            </div>
+            <div class="triplet-result">
+              <img src="static/images/vto/tryon4.png" alt="Try-on Result">
+            </div>
+          </div>
+
+          <div class="triplet-set">
+            <div class="triplet-inputs">
+              <div class="input-upper">
+                <img src="static/images/vto/triplet3.png" alt="Person">
+              </div>
+              <div class="input-lower">
+                <img src="static/images/vto/garment3.png" alt="Garment">
+              </div>
+            </div>
+            <div class="triplet-result">
+              <img src="static/images/vto/tryon3.png" alt="Try-on Result">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="slider-arrow right" onclick="moveTriplet(1)">&#10095;</button>
+    </div>
+
+    <div class="has-text-centered mt-4">
+      <p id="triplet-label" class="is-size-5 has-text-weight-semibold">S Person, XL Garment</p>
+    </div>
+  </div>
+</section>
+<!--/ VTO Demo -->
+
+<!-- VTO Demo (OLD)
+<section class="section">
+  <div class="container is-max-desktop">
     <div class="container" style="max-width: 1500px;"> 
       <div class="has-text-centered mt-6 mb-5">
         <h2 class="title is-3">Fit-Aware Virtual Try-On Demo</h2>
@@ -321,7 +401,7 @@
           <div class="garment-grid">
             <figure class="image-container" onclick="selectGarment('xl', this)">
               <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
-              <figcaption class="is-size-7 has-text-centered">XS</figcaption>
+              <figcaption class="is-size-7 has-text-centered">XL</figcaption>
             </figure>
             <figure class="image-container" onclick="selectGarment('xl', this)">
               <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
@@ -372,7 +452,7 @@
 
       </div>
     </div>
-    <!--/ VTO Demo. -->
+ -->
     
     <!-- Resizing Demo -->
     <div class="columns is-centered" style="margin-top:5%;">
