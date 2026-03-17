@@ -512,10 +512,14 @@
   <div class="container is-fluid" style="max-width: none !important; width: 100%;">
     <h2 class="title is-3 has-text-centered">Comparisons to State-of-the-Art</h2>
     <p class="is-centered">Prior virtual try-on works excel at garment appearance transfer and generating aesthetically-pleasing 
-      images. However, prior works lack precise measurement conditioning, instead hallucinating garment fit.
+      images. However, these past methods lack precise measurement conditioning and instead hallucinate garment fit.
       In contrast, Fit-VTO generates high-quality virtual try-on results, while also being measurement-conditioned.
-      We show results on both the FIT and VITON-HD test datasets. Note that VITON-HD does not include measurements.
+      Below, we show how Fit-VTO excels on <b>synthetic</b> FIT images with measurement conditioning, as well as 
+      <b>real-world</b> VITON-HD images without measurements.
     </p>
+
+    <!-- FIT SOTA Comparisons -->
+    <h3 class="title mt-5 mb-3 is-4 has-text-centered mb-4">FIT Dataset</h3>
     <div class="comparison-slider-wrapper">
       <button class="slider-arrow left" onclick="moveSlider(-1)">&#10094;</button>
       
@@ -676,9 +680,159 @@
         <p id="caption-precise" class="subtitle is-7 has-text-centered custom-monospace"></p>
       </div>
     </div>
+  <!--/ FIT SOTA Comparisons -->
+   
+  <!--- VITON-HD SOTA Comparisons -->
+  <hr class="mt-5 mb-5"> <h3 class="title is-4 has-text-centered">VITON-HD Dataset</h3>
+  <div class="comparison-slider-wrapper mt-5">
+    <button class="slider-arrow left" onclick="moveSota2(-1)">&#10094;</button>
+    <div class="slider-viewport">
+      <div class="slider-track" id="sota-track-2">
+        
+        <div class="comparison-set comparison-set-no-meta">
+          <div class="input-media-item">
+            <div class="input-stack">
+              <img src="static/images/sota/vitonhd1/input_person.png" class="input-img-tall">
+              <img src="static/images/sota/vitonhd1/input_garment.png" class="input-img-square">
+            </div>
+            <p class="subtitle is-7">Inputs</p>
+          </div>
+
+          <div class="comparison-item"><img src="static/images/sota/vitonhd1/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd1/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd1/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd1/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd1/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd1/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+        </div>
+
+        <div class="comparison-set comparison-set-no-meta">
+          <div class="input-media-item">
+            <div class="input-stack">
+              <img src="static/images/sota/vitonhd2/input_person.png" class="input-img-tall">
+              <img src="static/images/sota/vitonhd2/input_garment.png" class="input-img-square">
+            </div>
+            <p class="subtitle is-7">Inputs</p>
+          </div>
+
+          <div class="comparison-item"><img src="static/images/sota/vitonhd2/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd2/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd2/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd2/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd2/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd2/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+        </div>
+
+        <div class="comparison-set comparison-set-no-meta">
+          <div class="input-media-item">
+            <div class="input-stack">
+              <img src="static/images/sota/vitonhd3/input_person.png" class="input-img-tall">
+              <img src="static/images/sota/vitonhd3/input_garment.png" class="input-img-square">
+            </div>
+            <p class="subtitle is-7">Inputs</p>
+          </div>
+
+          <div class="comparison-item"><img src="static/images/sota/vitonhd3/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd3/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd3/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd3/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd3/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd3/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+        </div>
+
+        <div class="comparison-set comparison-set-no-meta">
+          <div class="input-media-item">
+            <div class="input-stack">
+              <img src="static/images/sota/vitonhd4/input_person.png" class="input-img-tall">
+              <img src="static/images/sota/vitonhd4/input_garment.png" class="input-img-square">
+            </div>
+            <p class="subtitle is-7">Inputs</p>
+          </div>
+
+          <div class="comparison-item"><img src="static/images/sota/vitonhd4/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd4/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd4/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd4/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd4/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd4/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+        </div>
+
+        <div class="comparison-set comparison-set-no-meta">
+          <div class="input-media-item">
+            <div class="input-stack">
+              <img src="static/images/sota/vitonhd5/input_person.png" class="input-img-tall">
+              <img src="static/images/sota/vitonhd5/input_garment.png" class="input-img-square">
+            </div>
+            <p class="subtitle is-7">Inputs</p>
+          </div>
+
+          <div class="comparison-item"><img src="static/images/sota/vitonhd5/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd5/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd5/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd5/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd5/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd5/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+        </div>
+
+        <div class="comparison-set comparison-set-no-meta">
+          <div class="input-media-item">
+            <div class="input-stack">
+              <img src="static/images/sota/vitonhd6/input_person.png" class="input-img-tall">
+              <img src="static/images/sota/vitonhd6/input_garment.png" class="input-img-square">
+            </div>
+            <p class="subtitle is-7">Inputs</p>
+          </div>
+
+          <div class="comparison-item"><img src="static/images/sota/vitonhd6/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd6/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd6/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd6/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd6/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+          <div class="comparison-item"><img src="static/images/sota/vitonhd6/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+        </div>
+
+      <div class="comparison-set comparison-set-no-meta">
+        <div class="input-media-item">
+          <div class="input-stack">
+            <img src="static/images/sota/vitonhd7/input_person.png" class="input-img-tall">
+            <img src="static/images/sota/vitonhd7/input_garment.png" class="input-img-square">
+          </div>
+          <p class="subtitle is-7">Inputs</p>
+        </div>
+
+        <div class="comparison-item"><img src="static/images/sota/vitonhd7/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd7/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd7/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd7/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd7/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd7/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+      </div>
+
+      <div class="comparison-set comparison-set-no-meta">
+        <div class="input-media-item">
+          <div class="input-stack">
+            <img src="static/images/sota/vitonhd8/input_person.png" class="input-img-tall">
+            <img src="static/images/sota/vitonhd8/input_garment.png" class="input-img-square">
+          </div>
+          <p class="subtitle is-7">Inputs</p>
+        </div>
+
+        <div class="comparison-item"><img src="static/images/sota/vitonhd8/any2any.png"><p class="subtitle is-6">Any2Any</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd8/nanobanana.png"><p class="subtitle is-6">Nano Banana</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd8/cotton.png"><p class="subtitle is-6">COTTON</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd8/idm.png"><p class="subtitle is-6">IDM-VTON</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd8/ours.png"><p class="subtitle is-6 has-text-weight-bold has-text-primary">Ours</p></div>
+        <div class="comparison-item"><img src="static/images/sota/vitonhd8/gt.png"><p class="subtitle is-6">Ground Truth</p></div>
+      </div>
+
+      </div>
+    </div>
+    <button class="slider-arrow right" onclick="moveSota2(1)">&#10095;</button>
+  </div>
+  <!--/ VITON-HD SOTA Comparisons -->
   </div>
 </section>
-<!--/SOTA Comparisons -->
+<!--/ SOTA Comparisons -->
 
 <!-- Methods. -->
 <section class="section" style="background-color: #eee;">

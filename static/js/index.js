@@ -254,6 +254,19 @@ function moveSlider(direction) {
 
 // ------------ End SOTA Comparison -------
 
+// ------------ SOTA Comparison #2 -------
+let currentSota2 = 0;
+
+function moveSota2(direction) {
+  const track = document.getElementById('sota-track-2');
+  const items = track.querySelectorAll('.comparison-set');
+  const total = items.length;
+
+  currentSota2 = (currentSota2 + direction + total) % total;
+
+  track.style.transform = `translateX(-${currentSota2 * 100}%)`;
+}
+// ------------ End SOTA Comparison #2 -------
 
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;

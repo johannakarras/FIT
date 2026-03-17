@@ -483,18 +483,6 @@ input[type=range] {
   min-height: 0px;
 }
 
-/* Captions: Force them into the second row */
-.comparison-item .subtitle {
-  grid-row: 2; /* Sits exactly below the images */
-  text-align: center;
-  margin: 0 !important;
-  padding-top: 5px;
-  font-size: 0.75rem;
-  /* Ensures long names don't break the 7-column layout */
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 /* Row 1: The Stacked Inputs and the Results */
 .input-stack {
   grid-column: 2;
@@ -526,9 +514,11 @@ input[type=range] {
   text-align: center;
   margin: 0 !important;
   padding-top: 12px;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 500;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* --- COLUMN MAPPING FIX --- */
@@ -607,6 +597,38 @@ input[type=range] {
 }
 
 /* End SOTA Comparisons */
+
+/* SOTA Comparisons #2 */
+/* 1. Define the 7-column grid structure */
+.comparison-set.comparison-set-no-meta {
+  grid-template-columns: 0.8fr repeat(6, 1fr) !important;
+}
+
+/* 2. Map the Input Column to Column 1 */
+.comparison-set.comparison-set-no-meta .input-media-item .input-stack,
+.comparison-set.comparison-set-no-meta .input-media-item .subtitle {
+  grid-column: 1 !important;
+}
+
+/* 3. Map the 6 result items to Columns 2 through 7 */
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(1) img, 
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(1) .subtitle { grid-column: 1 !important; }
+
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(2) img, 
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(2) .subtitle { grid-column: 2 !important; }
+
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(3) img, 
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(3) .subtitle { grid-column: 3 !important; }
+
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(4) img, 
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(4) .subtitle { grid-column: 4 !important; }
+
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(5) img, 
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(5) .subtitle { grid-column: 5 !important; }
+
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(6) img, 
+.comparison-set.comparison-set-no-meta .comparison-item:nth-of-type(6) .subtitle { grid-column: 6 !important; }
+/* End SOTA Comparisons #2 */
 
 body {
   font-family: 'Noto Sans', sans-serif;
