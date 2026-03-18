@@ -230,12 +230,10 @@ function toggleExpand(element) {
 
 // ------------ SOTA Comparison -----------
 let currentSlide = 0;
+let totalSlides = 5
 
 function moveSlider(direction) {
     const track = document.getElementById('comparison-track');
-    // Count how many 'comparison-set' groups you have
-    const slides = document.querySelectorAll('.comparison-set');
-    const totalSlides = slides.length;
     
     currentSlide += direction;
 
