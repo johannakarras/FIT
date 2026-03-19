@@ -258,7 +258,7 @@ input[type=range] {
   display: flex;
   flex-flow: column wrap; /* Stack in columns, then wrap to the right */
   align-content: flex-start;
-  
+
   /* Calculate height: (4 rows * 150px) + (3 gaps * 15px) = 645px */
   height: 700px; 
   
@@ -401,8 +401,6 @@ input[type=range] {
 
 /* Zoom the image slightly on hover */
 .grid-item:hover .main-sample {
-  transform: scale(1.1);
-  filter: brightness(0.9); /* Slightly darkens to make the "Expand" intent clear */
 }
 
 /* Ensure the main image transitions smoothly */
@@ -412,7 +410,6 @@ input[type=range] {
 
 /* Optional: Add a "Click to Expand" icon that appears ONLY on hover */
 .grid-item::after {
-  content: "🔍"; 
   position: absolute;
   top: 50%;
   left: 50%;

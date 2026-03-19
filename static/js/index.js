@@ -154,22 +154,22 @@ function selectGarmentSlider(id, element) {
 const sampleData = {
   1: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
   2: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  3: { bust: "96", height: "154", hips: "99", waist: "80", width: "110", length: "54",  sleeve: "20" }, // S, M
+  3: { bust: "141", height: "172", hips: "134", waist: "141", width: "130", length: "52",  sleeve: "0" }, // 3XL, 2XL
   4: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  5: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  5: { bust: "118", height: "170", hips: "120", waist: "108", width: "119", length: "49",  sleeve: "18" }, // 2XL, XL
   6: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
   7: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
   8: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
   9: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  10: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  11: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  18: { bust: "106", height: "175", hips: "109", waist: "92", width: "96", length: "54",  sleeve: "13" }, // L, XS
+  10: { bust: "90", height: "158", hips: "90", waist: "74", width: "98", length: "49",  sleeve: "17" }, // XS M
+  17: { bust: "103", height: "161", hips: "101", waist: "89", width: "122", length: "60",  sleeve: "18" }, // M, XL
+  22: { bust: "84", height: "157", hips: "97", waist: "63", width: "122", length: "67",  sleeve: "16" }, // 
 };
 document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.getElementById('dataset-grid');
   
   // Update these to match your actual folder and file count
-  const totalImages = 32; 
+  const totalImages = 24; 
   const path = 'static/images/dataset/';
 
   if (gridContainer) {
