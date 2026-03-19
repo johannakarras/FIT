@@ -3,9 +3,20 @@ window.HELP_IMPROVE_VIDEOJS = false;
 // ------------ VTO Demo ------------ 
 const tripletData = [
   { label: "XS Person, 3XL Garment" }, // Example #1
+  { label: "L Person, XS Garment" }, // Example #7
   { label: "2XL Person, 2XL Garment" }, // Example #3
+  { label: "M Person, 2XL Garment" }, // Example #11
+  { label: "S Person, S Garment" }, // Example #10
+  { label: "3XL Person, 3XL Garment" }, // Example #14
   { label: "M Person, XL Garment" }, // Example #4
+  { label: "3XL Person, XL Garment" }, // Example #9
+  { label: "S Person, S Garment" }, // Example #6
+  { label: "M Person, 2XL Garment" }, // Example #12
   { label: "XS Person, L Garment" }, // Example #5
+  { label: "M Person, M Garment" }, // Example #2
+  { label: "XL Person, S Garment" }, // Example #13
+  { label: "S Person, S Garment" }, // Example #8
+  { label: "2XL Person, 2XL Garment" }, // Example #15
 ];
 
 let currentTriplet = 0;
@@ -28,7 +39,7 @@ function moveTriplet(direction) {
 
 // ------------ End VTO Demo ------------ 
 
-// ------------ VTO Demo ------------ 
+// ------------ Old VTO Demo ------------ 
 let currentGarment = 'xl';
 let currentPerson = 'xs';
 
@@ -141,16 +152,18 @@ function selectGarmentSlider(id, element) {
 
 // ------------ Browse Dataset ------------ 
 const sampleData = {
-  1: { bust: "114", height: "171", hips: "121", waist: "102", width: "119", length: "50",  sleeve: "18" },
-  2: { bust: "90", height: "165", hips: "88", waist: "75", width: "101", length: "49",  sleeve: "18" },
-  3: { bust: "101", height: "178", hips: "104", waist: "86", width: "120", length: "75",  sleeve: "30" },
-  4: { bust: "117", height: "176", hips: "117", waist: "105", width: "131", length: "53",  sleeve: "0" },
-  5: { bust: "95", height: "172", hips: "100", waist: "77", width: "142", length: "53",  sleeve: "54" },
-  6: { bust: "123", height: "195", hips: "126", waist: "114", width: "114", length: "50",  sleeve: "16" },
-  7: { bust: "84", height: "163", hips: "90", waist: "63", width: "92", length: "45",  sleeve: "21" },
-  8: { bust: "141", height: "172", hips: "134", waist: "141", width: "134", length: "50",  sleeve: "48" },
-  9: { bust: "86", height: "162", hips: "89", waist: "68", width: "142", length: "58",  sleeve: "23" },
-  10: { bust: "94", height: "161", hips: "93", waist: "78", width: "104", length: "55",  sleeve: "20" },
+  1: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  2: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  3: { bust: "96", height: "154", hips: "99", waist: "80", width: "110", length: "54",  sleeve: "20" }, // S, M
+  4: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  5: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  6: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  7: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  8: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  9: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  10: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  11: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  18: { bust: "106", height: "175", hips: "109", waist: "92", width: "96", length: "54",  sleeve: "13" }, // L, XS
 };
 document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.getElementById('dataset-grid');
