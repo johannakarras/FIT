@@ -486,6 +486,129 @@ input[type=range] {
   border-color: transparent;
 }
 
+.fit-scale-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1250px; /* Match your grid's max-width */
+  margin: 0 auto;
+  margin-left: 6%;
+  padding: 5 5px;
+  padding-bottom: 10px;
+}
+
+.fit-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #7cd8d7;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.fit-arrow-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Makes the arrow stretch between labels */
+}
+
+.fit-center-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Centers it perfectly */
+  
+  /* Styling */
+  background-color: #fdfdfd; /* Match your page/container background */
+  padding: 0 10px;           /* Creates space so the line doesn't touch the text */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #7cd8d7;            /* Matches your arrow color */
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  z-index: 2;                /* Sits on top of the line */
+}
+
+.fit-line {
+  height: 2px;
+  background: linear-gradient(to right, #7cd8d7, #5bbdbb); /* Your turquoise theme */
+  width: 100%;
+  border-radius: 2px;
+}
+
+.fit-arrow-head {
+  position: absolute;
+  right: -2px;
+  color: #5bbdbb;
+  font-size: 1.2rem;
+}
+
+.person-scale-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80px; /* Match the margin-left of the top scale */
+  padding: 20px 0;
+  /* Match this to the height of your dataset-grid */
+  height: 700px; 
+}
+
+.person-arrow-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 10px 0;
+}
+
+.person-arrow-head {
+  color: #7cd8d7;
+  font-size: 1.1rem;
+  line-height: 1; /* Prevents extra spacing around the icon */
+  margin-top: -5px; /* Pulls the arrow head up to 'swallow' the end of the line */
+  display: block;
+}
+
+.person-line {
+  width: 2px;
+  background: #7cd8d7;
+  height: 100%;
+  margin-bottom: -2px; /* Slight overlap to ensure no gap is visible */
+}
+
+.person-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfectly centered on the line */
+  
+  /* Text Rotation */
+  writing-mode: vertical-rl;
+  transform: translate(-50%, -50%) rotate(180deg); /* Centers AND rotates */
+  
+  /* Styling to match the top arrow */
+  background-color: #fdfdfd; /* Match your background to "cut" the line */
+  padding: 10px 0;           /* Vertical padding creates the gap in the line */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #7cd8d7;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.person-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #7cd8d7;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
 /* End Browse Dataset */
 
 /* SOTA Comparisons */

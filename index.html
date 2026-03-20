@@ -211,7 +211,32 @@
       <p class="has-text-centered" style="margin-bottom:1%;">
         <i>Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements. 📏</i>
       </p>
-      <div id="dataset-grid" class="dataset-grid" style="background-color:#eeeeeea2"></div>
+      <div class="fit-scale-container">
+        <span class="fit-label"><i>Tighter</i></span>
+        <div class="fit-arrow-wrapper">
+          <div class="fit-line"></div>
+          <div class="fit-center-label">Garment Fit</div>
+          <i class="fas fa-caret-right fit-arrow-head"></i>
+        </div>
+        <span class="fit-label"><i>Looser</i></span>
+      </div>
+
+      <div class="browser-main-wrapper" style="display: flex; align-items: stretch;">
+        
+        <div class="person-scale-container">
+          <span class="person-label"><i>Smaller</i></span>
+          <div class="person-arrow-wrapper">
+            <div class="person-line"></div>
+            <div class="person-center-label">Person Size</div>
+            <i class="fas fa-caret-down person-arrow-head"></i>
+          </div>
+          <span class="person-label"><i>Larger</i></span>
+        </div>
+
+        <div id="dataset-grid" class="dataset-grid" style="background-color:#eeeeeea2; flex-grow: 1;">
+        </div>
+
+      </div>
     </div>
     <!--/ Browse Dataset-->
     <!-- Dataset Statistic -->
