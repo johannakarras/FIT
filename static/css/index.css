@@ -410,6 +410,18 @@ input[type=range] {
   z-index: 5;
   pointer-events: none; /* Allows clicks to pass through to the image if needed */
 }
+.measure-header {
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: #7cd8d7; /* Using your signature turquoise */
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+  width: 100%; /* Ensures it centers relative to the whole box */
+}
 
 /* Individual lines */
 .measure-item {
