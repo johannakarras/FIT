@@ -148,19 +148,30 @@ function selectGarmentSlider(id, element) {
 
 // ------------ Browse Dataset ------------ 
 const sampleData = {
-  1: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  2: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  1: { bust: "84", height: "160", hips: "93", waist: "64", width: "106", length: "46",  sleeve: "18" }, // 
+  2: { bust: "113", height: "181", hips: "106", waist: "105", width: "100", length: "47",  sleeve: "14" }, // 2XL, S
   3: { bust: "141", height: "172", hips: "134", waist: "141", width: "130", length: "52",  sleeve: "0" }, // 3XL, 2XL
-  4: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  4: { bust: "90", height: "163", hips: "87", waist: "74", width: "99", length: "61",  sleeve: "14" }, // XS, XS
   5: { bust: "118", height: "170", hips: "120", waist: "108", width: "119", length: "49",  sleeve: "18" }, // 2XL, XL
-  6: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  7: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  8: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  9: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
-  10: { bust: "90", height: "158", hips: "90", waist: "74", width: "98", length: "49",  sleeve: "17" }, // XS M
-  14: { bust: "110", height: "171", hips: "116", waist: "99", width: "125", length: "52",  sleeve: "22" }, // XL, 2XL
-  17: { bust: "103", height: "161", hips: "101", waist: "89", width: "122", length: "60",  sleeve: "18" }, // M, XL
-  22: { bust: "84", height: "157", hips: "97", waist: "63", width: "122", length: "67",  sleeve: "16" }, // 
+  6: { bust: "131", height: "190", hips: "121", waist: "127", width: "138", length: "61",  sleeve: "20" }, // 2XL, L
+  7: { bust: "90", height: "175", hips: "93", waist: "72", width: "114", length: "50",  sleeve: "54" }, // XS, XS
+  8: { bust: "95", height: "173", hips: "99", waist: "78", width: "99", length: "51",  sleeve: "30" }, // M, M
+  9: { bust: "117", height: "170", hips: "123", waist: "106", width: "105", length: "68",  sleeve: "13" }, // 2XL, L
+  10: { bust: "84", height: "174", hips: "100", waist: "63", width: "126", length: "59",  sleeve: "19" }, // XS, L
+  11: { bust: "106", height: "175", hips: "109", waist: "91", width: "113", length: "60",  sleeve: "13" }, // L, L
+  12: { bust: "114", height: "171", hips: "121", waist: "102", width: "119", length: "41",  sleeve: "58" }, // 2XL, 2XL
+  13: { bust: "83", height: "170", hips: "95", waist: "63", width: "107", length: "49",  sleeve: "54" }, // XS, M
+  14: { bust: "96", height: "154", hips: "99", waist: "80", width: "98", length: "62",  sleeve: "19" }, // M, M
+  15: { bust: "118", height: "183", hips: "124", waist: "109", width: "124", length: "54",  sleeve: "59" }, // 2XL, 2XL
+  16: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
+  17: { bust: "102", height: "182", hips: "108", waist: "86", width: "129", length: "53",  sleeve: "21" }, // M, XL
+  18: { bust: "122", height: "152", hips: "133", waist: "108", width: "143", length: "48",  sleeve: "0" }, // 3XL, 3XL
+  19: { bust: "90", height: "163", hips: "96", waist: "73", width: "107", length: "58",  sleeve: "42" }, // XS, M
+  20: { bust: "108", height: "174", hips: "110", waist: "96", width: "125", length: "76",  sleeve: "17" }, // L, 2XL
+  21: { bust: "123", height: "196", hips: "126", waist: "114", width: "157", length: "60",  sleeve: "41" }, // 2XL, 3XL
+  22: { bust: "88", height: "165", hips: "96", waist: "68", width: "99", length: "70",  sleeve: "19" }, // S, 2XL
+  23: { bust: "96", height: "154", hips: "99", waist: "80", width: "128", length: "58",  sleeve: "27" }, // S, 2XL
+  24: { bust: "109", height: "158", hips: "114", waist: "97", width: "130", length: "56",  sleeve: "19" }, // XL, 2XL
 };
 document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.getElementById('dataset-grid');
