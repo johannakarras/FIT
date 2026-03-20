@@ -6,17 +6,18 @@ const tripletData = [
   { label: "L Person, XS Garment" }, // Example #7
   { label: "2XL Person, 2XL Garment" }, // Example #3
   { label: "M Person, 2XL Garment" }, // Example #11
-  { label: "S Person, S Garment" }, // Example #10
   { label: "3XL Person, 3XL Garment" }, // Example #14
   { label: "M Person, XL Garment" }, // Example #4
   { label: "3XL Person, XL Garment" }, // Example #9
-  { label: "S Person, S Garment" }, // Example #6
   { label: "M Person, 2XL Garment" }, // Example #12
-  { label: "XS Person, L Garment" }, // Example #5
   { label: "M Person, M Garment" }, // Example #2
-  { label: "XL Person, S Garment" }, // Example #13
   { label: "S Person, S Garment" }, // Example #8
   { label: "XL Person, S Garment" }, // Example #15
+  { label: "2XL Person, 3XL Garment" }, // Example #6
+  { label: "XL Person, XL Garment" }, // Example #13
+  { label: "XS Person, S Garment" }, // Example #5
+  { label: "M Person, M Garment" }, // Example #10
+  { label: "XS Person, M Garment" }, // Example #16
 ];
 
 let currentTriplet = 0;
