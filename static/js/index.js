@@ -16,7 +16,7 @@ const tripletData = [
   { label: "M Person, M Garment" }, // Example #2
   { label: "XL Person, S Garment" }, // Example #13
   { label: "S Person, S Garment" }, // Example #8
-  { label: "2XL Person, 2XL Garment" }, // Example #15
+  { label: "XL Person, S Garment" }, // Example #15
 ];
 
 let currentTriplet = 0;
@@ -63,10 +63,6 @@ function selectPerson(id) {
 // ------------ Resizing Demo ------------ 
 // 1. Configuration & State
 const sizeMap = { 1: "xs", 2: "s", 3: "m", 4: "l", 5: "xl", 6: "2xl", 7: "3xl" };
-const availability = {
-  'xs': [1, 2, 3, 4], // XS, S, M, L
-  'xl':  [3, 4, 5, 6], // M, L, XL, 2XL
-};
 
 let currentGarment2 = 'xs';
 let currentSize = "s"; // Start with a string that matches sizeMap[2]
@@ -78,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slider) {
     slider.addEventListener('input', function(e) {
       let val = parseInt(e.target.value);
-      const validSizes = availability[currentGarment2] || [1,2,3,4,5,6,7];
+      const validSizes = [1,2,3,4,5,6,7];
 
       // SNAP LOGIC: If the user slides to a restricted value, find the closest valid one
       if (!validSizes.includes(val)) {
@@ -107,7 +103,7 @@ function updateSliderDemo() {
 // 4. Garment Selection Handler
 function selectGarmentSlider(id, element) {
   currentGarment2 = id;
-  const validSizes = availability[id] || [1,2,3,4,5,6,7];
+  const validSizes = [1,2,3,4,5,6,7];
 
   // 1. Update text labels styling
   const spans = document.querySelectorAll('#size-settings span');
@@ -162,6 +158,7 @@ const sampleData = {
   8: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
   9: { bust: "", height: "", hips: "", waist: "", width: "", length: "",  sleeve: "" }, // 
   10: { bust: "90", height: "158", hips: "90", waist: "74", width: "98", length: "49",  sleeve: "17" }, // XS M
+  14: { bust: "110", height: "171", hips: "116", waist: "99", width: "125", length: "52",  sleeve: "22" }, // XL, 2XL
   17: { bust: "103", height: "161", hips: "101", waist: "89", width: "122", length: "60",  sleeve: "18" }, // M, XL
   22: { bust: "84", height: "157", hips: "97", waist: "63", width: "122", length: "67",  sleeve: "16" }, // 
 };

@@ -196,6 +196,50 @@ a {
 
 
 /* Resizing Demo */
+/* 1. Turn the scroll box into a 2-column grid */
+.vertical-scroll-box {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr; /* Two equal columns */
+  gap: 10px;
+  max-height: 550px; /* Match the 500px result image + some padding */
+  overflow-y: auto;
+  padding-right: 10px; /* Space for the scrollbar */
+  width: 400px; /* Adjust this to control how wide the sidebar is */
+}
+
+/* 2. Ensure the figure doesn't have extra margins */
+.vertical-scroll-box .image-container {
+  margin: 0 !important;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* 3. Style the thumbnails to fit the new smaller width */
+.vertical-scroll-box .garment-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+/* 4. Active state for the currently selected person */
+.vertical-scroll-box .image-container.is-active img {
+  border-color: #7cd8d7; /* Bulma Turquoise */
+  box-shadow: 0 0 8px rgba(124, 216, 215, 0.5);
+}
+
+/* 5. Custom scrollbar for a cleaner look */
+.vertical-scroll-box::-webkit-scrollbar {
+  width: 6px;
+}
+.vertical-scroll-box::-webkit-scrollbar-thumb {
+  background: #eee;
+  border-radius: 10px;
+}
+
 /* Style the tick labels to span the width of the slider */
 #size-settings {
   display: flex;
