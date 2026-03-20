@@ -209,7 +209,7 @@
       </p>
       <br>
       <p class="has-text-centered" style="margin-bottom:1%;">
-        <i>Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements.</i>
+        <i>Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements. 📏</i>
       </p>
       <div id="dataset-grid" class="dataset-grid" style="background-color:#eeeeeea2"></div>
     </div>
@@ -307,8 +307,82 @@
   </div>
 </section>
 
+<section>
+    <!-- Resizing Demo -->
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Garment Resizing Demo</h2>
+        <p style="margin-bottom:3%;">Try on different sizes of the same garment! </p>
+          <div class="container" style="max-width: 700px;">
+            <div class="columns is-mobile is-variable is-3 is-centered">
+              <!-- Selection of Images -->
+              <div class="column is-narrow">
+                <div class="vertical-scroll-box">
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('xs', this)">
+                    <img src="static/images/resizing/xs_xs.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">XS Person</figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('s', this)">
+                    <img src="static/images/resizing/s_s.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">S Person</figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('m', this)">
+                    <img src="static/images/resizing/m_m.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">M Person</figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('l', this)">
+                    <img src="static/images/resizing/l_l.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">L Person</figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('xl', this)">
+                    <img src="static/images/resizing/xl_xl.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">XL Person</figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('2xl', this)">
+                    <img src="static/images/resizing/2xl_2xl.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">2XL Person</figcaption>
+                  </figure>
+                  <figure class="image-container mb-4" onclick="selectGarmentSlider('3xl', this)">
+                    <img src="static/images/resizing/3xl_3xl.png" class="thumb garment-thumb">
+                    <figcaption class="is-size-7 mt-1">3XL Person</figcaption>
+                  </figure>
+                  </div>
+              </div>
+
+              <!-- Result Image -->
+              <div class="column is-narrow">
+                <div class="main-display has-text-centered">
+                  <img id="slider-result-image" src="static/images/resizing/xs_xs.png" style="max-height: 500px;">
+                </div>
+                
+                <!-- Slider for Garment Size -->
+                <div class="mt-5 has-text-centered" style="width: 100%; max-width: 400px; margin: 0 auto;">
+                  <p class="label mb-4">Garment Size</p>
+                  
+                  <input id="size-slider" type="range" min="1" max="7" value="4" step="1" style="width: 100%;">
+
+                  <div id="size-settings" class="size-labels-container">
+                    <span data-value="1">XS</span>
+                    <span data-value="2">S</span>
+                    <span data-value="3">M</span>
+                    <span data-value="4">L</span>
+                    <span data-value="5">XL</span>
+                    <span data-value="6">2XL</span>
+                    <span data-value="7">3XL</span>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--/ Resizing Demo -->
+  </div>
+</section>
+
 <!-- VTO Demo -->
-<section class="section">
+<section class="section" style="margin-top:5%;">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Fit-Aware Virtual Try-On Demo</h2>
     
@@ -541,146 +615,6 @@
   </div>
 </section>
 <!--/ VTO Demo -->
-
-<!-- VTO Demo (OLD)
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="container" style="max-width: 1500px;"> 
-      <div class="has-text-centered mt-6 mb-5">
-        <h2 class="title is-3">Fit-Aware Virtual Try-On Demo</h2>
-        <p style="margin-bottom:3%;">Visualize how different garments fit across different body shapes.</p>
-      </div>
-      <div class="columns is-mobile is-centered is-align-items-start">
-        <div class="column is-narrow"> 
-          <p class="label has-text-centered">Select Garment</p>
-          <div class="garment-grid">
-            <figure class="image-container" onclick="selectGarment('xl', this)">
-              <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
-              <figcaption class="is-size-7 has-text-centered">XL</figcaption>
-            </figure>
-            <figure class="image-container" onclick="selectGarment('xl', this)">
-              <img src="static/images/vto/g_xl.png" class="thumb garment-thumb">
-              <figcaption class="is-size-7 has-text-centered">S</figcaption>
-            </figure>
-            </div>
-          </div>
-
-          <div class="column is-narrow">
-            <div class="main-display has-text-centered">
-              <img id="result-image" src="static/images/vto/xl_xs.png" style="max-height: 500px;">
-            </div>
-          </div> 
-
-          <div class="column is-narrow">
-            <p class="label has-text-centered">Select Person</p>
-            <div class="person-grid">
-              <figure class="image-container" onclick="selectPerson('xs', this)">
-                <img src="static/images/vto/p_xs.png" class="thumb person-thumb">
-                <figcaption class="is-size-7 has-text-centered">XS</figcaption>
-              </figure>
-              <figure class="image-container" onclick="selectPerson('s', this)">
-                <img src="static/images/vto/p_s.png" class="thumb person-thumb">
-                <figcaption class="is-size-7 has-text-centered">S</figcaption>
-              </figure>
-              <figure class="image-container" onclick="selectPerson('m', this)">
-                <img src="static/images/vto/p_m.png" class="thumb person-thumb">
-                <figcaption class="is-size-7 has-text-centered">M</figcaption>
-              </figure>
-              <figure class="image-container" onclick="selectPerson('l', this)">
-                <img src="static/images/vto/p_l.png" class="thumb person-thumb">
-                <figcaption class="is-size-7 has-text-centered">L</figcaption>
-              </figure>
-              <figure class="image-container" onclick="selectPerson('xl', this)">
-                <img src="static/images/vto/p_xl.png" class="thumb person-thumb">
-                <figcaption class="is-size-7 has-text-centered">XL</figcaption>
-              </figure>
-              <figure class="image-container" onclick="selectPerson('2xl', this)">
-                <img src="static/images/vto/p_2xl.png" class="thumb person-thumb">
-                <figcaption class="is-size-7 has-text-centered">2XL</figcaption>
-              </figure>
-              <figure class="image-container" onclick="selectPerson('3xl', this)">
-                <img src="static/images/vto/p_3xl.png" class="thumb person-thumb">
-                <figcaption class="is-size-7 has-text-centered">3XL</figcaption>
-              </figure>
-            </div>
-          </div>
-
-      </div>
-    </div>
- -->
-    
-    <!-- Resizing Demo -->
-    <div class="columns is-centered" style="margin-top:5%;">
-      <div class="column is-full-width has-text-centered">
-        <h2 class="title is-3">Garment Resizing Demo</h2>
-        <p style="margin-bottom:3%;">Try on different sizes of the same garment! </p>
-          <div class="container" style="max-width: 700px;">
-            <div class="columns is-mobile is-variable is-3 is-centered">
-              <!-- Selection of Images -->
-              <div class="column is-narrow">
-                <div class="vertical-scroll-box">
-                  <figure class="image-container mb-4" onclick="selectGarmentSlider('xs', this)">
-                    <img src="static/images/resizing/xs_xs.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 mt-1">XS Person</figcaption>
-                  </figure>
-                  <figure class="image-container mb-4" onclick="selectGarmentSlider('s', this)">
-                    <img src="static/images/resizing/s_s.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 mt-1">S Person</figcaption>
-                  </figure>
-                  <figure class="image-container mb-4" onclick="selectGarmentSlider('m', this)">
-                    <img src="static/images/resizing/m_m.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 mt-1">M Person</figcaption>
-                  </figure>
-                  <figure class="image-container mb-4" onclick="selectGarmentSlider('l', this)">
-                    <img src="static/images/resizing/l_l.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 mt-1">L Person</figcaption>
-                  </figure>
-                  <figure class="image-container mb-4" onclick="selectGarmentSlider('xl', this)">
-                    <img src="static/images/resizing/xl_xl.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 mt-1">XL Person</figcaption>
-                  </figure>
-                  <figure class="image-container mb-4" onclick="selectGarmentSlider('2xl', this)">
-                    <img src="static/images/resizing/2xl_2xl.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 mt-1">2XL Person</figcaption>
-                  </figure>
-                  <figure class="image-container mb-4" onclick="selectGarmentSlider('3xl', this)">
-                    <img src="static/images/resizing/3xl_3xl.png" class="thumb garment-thumb">
-                    <figcaption class="is-size-7 mt-1">3XL Person</figcaption>
-                  </figure>
-                  </div>
-              </div>
-
-              <!-- Result Image -->
-              <div class="column is-narrow">
-                <div class="main-display has-text-centered">
-                  <img id="slider-result-image" src="static/images/resizing/xs_xs.png" style="max-height: 500px;">
-                </div>
-                
-                <!-- Slider for Garment Size -->
-                <div class="mt-5 has-text-centered" style="width: 100%; max-width: 400px; margin: 0 auto;">
-                  <p class="label mb-4">Garment Size</p>
-                  
-                  <input id="size-slider" type="range" min="1" max="7" value="4" step="1" style="width: 100%;">
-
-                  <div id="size-settings" class="size-labels-container">
-                    <span data-value="1">XS</span>
-                    <span data-value="2">S</span>
-                    <span data-value="3">M</span>
-                    <span data-value="4">L</span>
-                    <span data-value="5">XL</span>
-                    <span data-value="6">2XL</span>
-                    <span data-value="7">3XL</span>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <!--/ Resizing Demo -->
-  </div>
-</section>
 
 <!-- SOTA Comparisons -->
 <section class="section">
