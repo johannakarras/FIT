@@ -214,7 +214,7 @@ a {
   display: grid !important;
   grid-template-columns: 1fr 1fr 1fr; /* Two equal columns */
   gap: 10px;
-  max-height: 550px; /* Match the 500px result image + some padding */
+  /*max-height: 550px;*/ /* Match the 500px result image + some padding */
   overflow-y: auto;
   padding-right: 10px; /* Space for the scrollbar */
   width: 400px; /* Adjust this to control how wide the sidebar is */

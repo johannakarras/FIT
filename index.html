@@ -104,7 +104,7 @@
               </span>
               <!-- Arxiv Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -114,22 +114,22 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (coming soon)</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Dataset (coming soon)</span>
                   </a>
             </div>
           </div>
@@ -144,9 +144,9 @@
     <div class="hero-body">
       <img class="teaser-image" src="static/images/teaser.svg">
       <h2 class="subtitle has-text-centered" style="font-size:1.1rem;">
-        We present the <span class="dnerf">FIT Dataset</span>: A dataset and benchmark designed for <i>fit-aware</i> virtual try-on, featuring diverse garment fits (e.g. tight, loose) and precise size annotations. 
-        <i>Left:</i> Sample dataset triplets showing the conditioning garent image (<i>top</i>), the conditioning person image (<i>middle</i>), and the target try-on image (<i>bottom</i>). 
-        <i>Right:</i> Visualization of the corresponding person and garent measurement annotations. Backgrounds removed for clarity.
+        We present the <span class="subtitle is-6 has-text-weight-bold has-text-primary">FIT Dataset</span>: A dataset and benchmark designed for <i>fit-aware</i> virtual try-on, featuring diverse garment fits (e.g. tight, loose) and precise size annotations. 
+        <b>Left:</b> Example dataset triplets consisting of (1) the conditioning garment image <i>(top)</i>, (2) the conditioning person image <i>(middle)</i>, and (3) the target try-on image <i>(bottom)</i>. 
+        <b>Right:</b> Visualization of the corresponding person and garment measurement annotations. Backgrounds removed for clarity.
       </h2>
     </div>
   </div>
@@ -161,7 +161,7 @@
         <div class="content has-text-justified">
           <p>
             Given a person and a garment image, virtual try-on (VTO) aims to synthesize a realistic image 
-            of the person wearing the garment, while preserving their original pose and identity. Although 
+            of the person wearing the garment while preserving their original pose and identity. Although 
             recent VTO methods excel at visualizing garment appearance, they largely overlook a crucial 
             aspect of the try-on experience: the accuracy of garment fit -- for example, depicting how 
             an extra-large shirt looks on an extra-small person.  A key obstacle is the absence of datasets 
@@ -205,11 +205,11 @@
         $(I_{\text{try-on}}, I_{\text{p}}, I_g, m_p, m_g)$. FIT covers 168 distinct body 
         shapes (82 men's, 86 women's) in sizes XS-3XL, 528 body poses, as well as 158,483 
         unique top and garment designs. The garments come in a diverse range of fits, from 
-        loose to tight fits. Refer to our paper for additional dataset statistics.
+        loose to tight. Refer to our paper for additional dataset statistics.
       </p>
       <br>
       <p class="has-text-centered" style="margin-bottom:1%;">
-        <i>Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements. 📏</i>
+        <b><i>Select a data sample to view the try-on image, paired-person image, layflat garment image, and measurements. 📏</i></b>
       </p>
       <div class="fit-scale-container">
         <span class="fit-label"><i>Tighter</i></span>
@@ -659,10 +659,10 @@
   <div class="container is-fluid" style="max-width: none !important; width: 100%;">
     <h2 class="title is-3 has-text-centered">Comparisons to State-of-the-Art</h2>
     <p class="is-centered">Prior virtual try-on works excel at garment appearance transfer and generating aesthetically-pleasing 
-      images. However, these past methods lack precise measurement conditioning and instead hallucinate garment fit.
+      images. However, past methods lack precise measurement conditioning and instead hallucinate garment fit.
       In contrast, Fit-VTO generates high-quality virtual try-on results, while also being measurement-conditioned.
       Below, we show how Fit-VTO excels on <b>synthetic</b> FIT images with measurement conditioning, as well as 
-      <b>real-world</b> VITON-HD images without measurements.
+      <b>real-world</b> VITON-HD images (without measurements).
     </p>
 
     <!-- FIT SOTA Comparisons -->
