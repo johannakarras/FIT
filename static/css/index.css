@@ -105,10 +105,18 @@ a {
 }
 
 /* Ensure the image wrappers fill the grid slots */
-.input-upper, .input-lower {
+.input-upper {
   height: 100%;
   width: 100%;
   min-height: 0; /* Important: allows grid items to shrink/fit */
+}
+
+.input-lower {
+  height: 100%;
+  width: 100%;
+  min-height: 0; /* Important: allows grid items to shrink/fit */
+  overflow: hidden; /* Safety net for the crop */
+  border-radius: 8px; /* Move the radius here if the image crop hides it */
 }
 
 .triplet-inputs img {
@@ -118,6 +126,11 @@ a {
   background-color: #f9f9f9;
   border-radius: 8px;
   display: block;
+}
+
+.input-lower img {
+  /* This crops the image to fill the 1fr grid space */
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
