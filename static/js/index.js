@@ -366,3 +366,49 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+// --- Mobile horizontal range sync for comparison sliders ---
+document.addEventListener('DOMContentLoaded', () => {
+  function wireRange(rangeId, viewportId) {
+    const range = document.getElementById(rangeId);
+    const viewport = document.getElementById(viewportId);
+    if (!range || !viewport) return;
+
+    // Ensure viewport is scrollable (mobile CSS enables overflow-x)
+    const syncMax = () => {
+      const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      range.max = max;
+      // keep range value within bounds
+      if (parseInt(range.value) > max) range.value = max;
+      range.style.width = '90%';
+    };
+
+    // when dragging the range, update scroll position
+    range.addEventListener('input', (e) => {
+      viewport.scrollLeft = parseInt(e.target.value);
+    });
+
+    // when scrolling manually, update the range position
+    let ticking = false;
+    viewport.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          range.value = viewport.scrollLeft;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    window.addEventListener('resize', syncMax);
+    syncMax();
+  }
+
+  wireRange('comparison-range', 'comparison-viewport');
+  // For the second SOTA track, the viewport isn't given an id; select the second occurrence
+  const sotaViewport = document.querySelectorAll('.slider-viewport')[1];
+  if (sotaViewport) {
+    sotaViewport.id = 'sota2-viewport';
+  }
+  wireRange('sota2-range', 'sota2-viewport');
+});

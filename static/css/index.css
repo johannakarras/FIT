@@ -823,6 +823,11 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* Hide mobile-only range controls by default; show them only in mobile media queries */
+.comparison-range {
+  display: none !important;
+}
+
 
 .footer .icon-link {
     font-size: 25px;
@@ -1065,5 +1070,71 @@ body {
     overflow-x: hidden;
     position: relative;
   }
+}
+/* Extra fixes for small phones to avoid SOTA comparison items collapsing/overlapping */
+@media (max-width: 480px) {
+  /* Make the comparison track horizontally scrollable like desktop, with a draggable range control */
+  .slider-viewport {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .slider-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+    transition: none !important; /* disable transform-based desktop animation on mobile */
+  }
+
+  /* Give each comparison-set a large minimum width so its internal grid doesn't collapse */
+  .comparison-set {
+    flex: 0 0 auto !important;
+    min-width: 900px !important;
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: 0.6fr 0.85fr repeat(6, 1fr) !important;
+    gap: 5px 5px !important;
+    padding: 12px !important;
+    align-items: stretch !important;
+  }
+
+  /* Ensure images inside each set keep their intended sizes */
+  .comparison-item img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 320px !important;
+    object-fit: cover !important;
+  }
+
+  /* Keep input stack behaved as grid inside each large comparison-set */
+  .input-stack {
+    max-height: 320px !important;
+    overflow: hidden !important;
+  }
+
+  /* Style for the mobile range input */
+  .comparison-range {
+    width: 90%;
+    max-width: 520px;
+    margin: 8px auto 0 auto;
+    display: block;
+  }
+
+  /* Restore the "Inputs" subtitle on very small screens */
+  .input-media-item .subtitle {
+    display: block !important;
+    font-size: 0.75rem !important;
+    padding-top: 6px !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Hide left/right arrows for SOTA comparisons on very small screens */
+  .comparison-slider-wrapper .slider-arrow {
+    display: none !important;
+  }
+
 }
 /* */

@@ -80,6 +80,9 @@
             <span class="author-block"><sup>*</sup>Equal contribution, listed alphabetically </span>
           </div>
 
+          <h2 class="subtitle has-text-centered" style="margin-top: 0.5rem; margin-bottom: 1rem; font-weight: bold; color: #66b7c0;">
+            SIGGRAPH 2026
+          </h2>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -194,7 +197,7 @@
 <section class="section">
   <div class="container is-fluid">
     <!-- Browse Dataset -->
-    <div class="container">
+    <div class="container dataset-browser" style="max-width: 1244px;">
       <h2 class="title is-3 has-text-centered is-flex is-align-items-center is-justify-content-center" style="margin-top:2rem; gap: 15px;">
         <img src="./static/images/favicon.svg" alt="FIT Logo" style="height: 2em; width: auto;">
         <span>FIT Dataset</span>
@@ -667,10 +670,10 @@
 
     <!-- FIT SOTA Comparisons -->
     <h3 class="title mt-5 mb-3 is-4 has-text-centered mb-4">FIT Dataset</h3>
-    <div class="comparison-slider-wrapper">
+      <div class="comparison-slider-wrapper">
       <button class="slider-arrow left" onclick="moveSlider(-1)">&#10094;</button>
       
-      <div class="slider-viewport">
+      <div class="slider-viewport" id="comparison-viewport">
         <div class="slider-track" id="comparison-track">
           
           <div class="comparison-set">
@@ -917,6 +920,9 @@
       </div>
       <button class="slider-arrow right" onclick="moveSlider(1)">&#10095;</button>
     </div>
+    <div class="has-text-centered mt-2">
+      <input id="comparison-range" class="comparison-range" type="range" min="0" max="100" value="0">
+    </div>
     <div class="container has-text-centered mt-5" style="margin-top:0px !important;">
       <div id="comparison-caption" class="comparison-caption">
         <p id="caption-coarse" class="title is-6 mb-1 has-text-centered has-text-weight-bold"></p>
@@ -1071,6 +1077,11 @@
       </div>
     </div>
     <button class="slider-arrow right" onclick="moveSota2(1)">&#10095;</button>
+    </div>
+  </div>
+  <div class="has-text-centered mt-2">
+    <input id="sota2-range" class="comparison-range" type="range" min="0" max="100" value="0">
+  </div>
   </div>
   <!--/ VITON-HD SOTA Comparisons -->
   </div>
@@ -1122,7 +1133,7 @@
     <pre><code>@article{fitvto2026,
   author    = {Karras, Johanna and Wang, Yuanhao and Li, Yingwei and Kemelmacher-Shlizerman, Ira},
   title     = {FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On},
-  journal   = {arxiv},
+  journal   = {SIGGRAPH},
   year      = {2026},
 }</code></pre>
   </div>
