@@ -1,1 +1,1 @@
-# FIT-Dataset-Website
+# Offical Website for "FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On"
