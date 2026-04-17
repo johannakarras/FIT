@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateSliderDemo() {
   const img = document.getElementById('slider-result-image');
   if (img) {
-    img.src = `static/images/resizing/${currentGarment2}_${currentSize}.png`;
+    img.src = `static/images/resizing_new/${currentGarment2}/${currentSize}.png`;
   }
 }
 
@@ -202,12 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="measurements-list">
-          <div class="measure-header">Person</div> <div class="measure-item"><strong>Height:</strong> ${data.height} cm</div>
+          <div class="measure-header">Person</div>
           <div class="measure-item"><strong>Height:</strong> ${data.height} cm</div>
           <div class="measure-item"><strong>Bust:</strong> ${data.bust} cm</div>
           <div class="measure-item"><strong>Waist:</strong> ${data.waist} cm</div>
           <div class="measure-item"><strong>Hips:</strong> ${data.hips} cm</div>
-          <div class="measure-header" style="padding-top:6px;">Garment</div> <div class="measure-item"><strong>Height:</strong> ${data.height} cm</div>
+          <div class="measure-header" style="padding-top:6px;">Garment</div>
           <div class="measure-item"><strong>Length:</strong> ${data.length} cm</div>
           <div class="measure-item"><strong>Width:</strong> ${data.width} cm</div>
           <div class="measure-item"><strong>Sleeve:</strong> ${data.sleeve} cm</div>
